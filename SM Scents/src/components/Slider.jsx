@@ -14,13 +14,13 @@ function Slider(){
 >
   <div className="carousel-inner carousel">
     <div className="carousel-item active   ">
-      <img src={image1} className="d-block w-100" alt="..." />
+      <img src="\src\assets\images\Black And White Modern Fashion Sale Banner Landscape.png" className="d-block w-100" alt="..." loading="lazy" />
     </div>
     <div className="carousel-item">
-      <img src={image2} className="d-block w-100" alt="..." />
+      <img src="\src\assets\images\slideImage2.jpg" className="d-block w-100" alt="..." />
     </div>
     <div className="carousel-item">
-      <img src={image3} className="d-block w-100" alt="..." />
+      <img src="\src\assets\images\slideImage3.jpg" className="d-block w-100" alt="..." />
     </div>
   </div>
   <button

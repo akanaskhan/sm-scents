@@ -2,7 +2,7 @@ import { Button, message } from "antd";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, db } from "../../utils/firebase";
 import { doc, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import React, { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -29,13 +29,25 @@ function LogIn() {
       .then((userCredential) => {
         // Signed in
         setUser(userCredential.user);
-        setUser(user);
         console.log(user);
-        navigate("/");
+        if(
+          (auth.currentUser?.uid) === (import.meta.env.VITE_USER_UID) ||
+          (auth.currentUser?.uid) === (import.meta.env.VITE_USER2_UID)){
+          navigate("/admin")
+          message.success("Admin Login Successfully")
+          
+        }else{
+          navigate("/");
+          message.success("Login Successfully")
+
+        }
+        
       })
       .catch((error) => {
         setError(error.message);
+        message.error("Invalid Email/Pasword")
       });
+     
   };
 
   const handleToggle = () => {
@@ -87,24 +99,24 @@ function LogIn() {
             </div>
           </div>
           <button
-            className="mt-3 py-2.5 w-72 rounded bg-black text-white"
+            className="mt-3 py-2.5 w-72 rounded bg-black text-white learn-btn transition-all"
             type="submit"
           >
             Login
           </button>
         </form>
-        {error && console.log(error) && message.error("Invalid Email/Pasword")}
+        {error && console.log(error) }
         {user && message.success("Login Succesfully")}
         <div>
           <Link to="/signup">
-            <button className="w-72 border border-black rounded mt-3 focus:rounded focus:outline-none active:outline-none active:border-none focus:border-none py-1.5 px-2 hover:bg-black hover:text-white ">
+            <button className="w-72 learn-btn transition-all border border-black rounded mt-3 focus:rounded focus:outline-none active:outline-none active:border-none focus:border-none py-1.5 px-2 hover:bg-black hover:text-white ">
               Create an account
             </button>
           </Link>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default LogIn;

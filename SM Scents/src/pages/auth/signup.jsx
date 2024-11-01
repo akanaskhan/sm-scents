@@ -1,7 +1,7 @@
-import { Button, message } from "antd";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { Alert, Button, message } from "antd";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth, db } from "../../utils/firebase";
-import { doc, setDoc } from "firebase/firestore";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router";
 import React, { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -37,7 +37,7 @@ function SignUp() {
         const errorMessage = error.message;
         // The email of the user's account used.
         const email = error.customData.email;
-        message.success(errorMessage);
+        // message.success(errorMessage);
 
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
@@ -45,6 +45,7 @@ function SignUp() {
       });
   };
 
+  const [Username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -60,13 +61,34 @@ function SignUp() {
       .then((userCredential) => {
         // Signed up
         setUser(userCredential.user);
-        setUser(user);
-        console.log(user);
+         try {
+
+          const  userCollection =  collection(db, "users");
+        const obj = {
+          email: email,
+          password: password,
+         
+          displayName: Username,
+
+        }
+      addDoc(userCollection, obj)
+        console.log(setUser(userCredential.user));
+      }catch(error){
+        console.log(error)
+      }
         navigate("/login");
+        message.success("Accout Created Succesfully");
+        signOut(auth)
       })
       .catch((error) => {
         setError(error.message);
         console.log("error=", error);
+        if ((error = "Firebase: Error (auth/email-already-in-use).")) {
+          message.info("Email already exit");
+        } else {
+          message.config("Try again after few minutes");
+        }
+        // message.error("Invalid Email/Pasword")
       });
   };
 
@@ -81,8 +103,8 @@ function SignUp() {
   };
 
   return (
-    <div className="flex justify-center my-32 ">
-      <div className=" p-7 border rounded border-black ">
+    <div className="flex justify-center lg:my-20 my-14 " >
+      <div className=" p-7  border rounded border-black ">
         <div className="text-center mb-4">
           <p className="text-black font-extrabold text-3xl underline ">
             SIGN UP
@@ -90,6 +112,18 @@ function SignUp() {
         </div>
         <form onSubmit={handleSignUp}>
           <div>
+            <label>Name:</label>
+          </div>
+          <div>
+            <input
+              className="w-72 border border-gray focus:rounded focus:outline-1 focus:border-none py-1 px-2"
+              type="text"
+              // value={Username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mt-3">
             <label>Email:</label>
           </div>
           <div>
@@ -120,27 +154,25 @@ function SignUp() {
             </span>
           </div>
           <button
-            className="mt-3 py-2.5 w-72 rounded bg-black text-white"
+            className="mt-3 py-2.5 w-72 rounded bg-black text-white learn-btn transition-all"
             type="submit"
           >
             Sign Up
-        {error && console.log(error) && message.error("Invalid Email/Pasword")}
-        {user && message.success("Accout Created Succesfully")}
+            {error && console.log(error)}
+            {user && message.success("Accout Created Succesfully")}
           </button>
         </form>
         <div>
           <Link to="/login">
-            <button className="w-72 border border-black rounded mt-3 focus:rounded focus:outline-none active:outline-none active:border-none focus:border-none py-1.5 px-2 hover:bg-black hover:text-white ">
-              
+            <button className="w-72 learn-btn transition-all border border-black rounded mt-3 focus:rounded focus:outline-none active:outline-none active:border-none focus:border-none py-1.5 px-2 hover:bg-black hover:text-white ">
               Already have an account
             </button>
           </Link>
         </div>
         <button
-          className="w-72 flex border border-black rounded mt-3 focus:rounded focus:outline-none active:outline-none active:border-none focus:border-none py-1.5 px-2 hover:bg-black hover:text-white justify-center items-center"
+          className="w-72 learn-btn transition-all flex border border-black rounded mt-3 focus:rounded focus:outline-none active:outline-none active:border-none focus:border-none py-1.5 px-2 hover:bg-black hover:text-white justify-center items-center"
           onClick={handleLogin}
-          >
-          
+        >
           <img
             className="w-9 pr-2"
             src="/src/assets/images/googleIcon.svg"
@@ -153,4 +185,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUp
