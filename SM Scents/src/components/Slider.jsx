@@ -1,3 +1,4 @@
+import Image10 from '../assets/images/slideImage1.jpg';
 function Slider(){
 
 
@@ -17,7 +18,7 @@ function Slider(){
       <img src="/src/assets/images/Black And White Modern Fashion Sale Banner Landscape.png" className="d-block w-100" alt="..." loading="lazy" />
     </div>
     <div className="carousel-item">
-      <img src="\SM Scents\src\assets\images\slideImage2.jpg" className="d-block w-100" alt="..." />
+      <img src={Image10} className="d-block w-100" alt="..." />
     </div>
     <div className="carousel-item">
       <img src={image1} className="d-block w-100" alt="..." />
