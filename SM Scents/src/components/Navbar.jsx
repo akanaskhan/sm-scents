@@ -146,7 +146,7 @@ const handleProductClick = (data) => {
             <div className="dropdown">
               <i
                 onClick={gotoLogin}
-                className={`fa-regular fa-user text-white fa-lg  cursor-pointer`}
+                className={`fa-solid fa-user text-white fa-lg  cursor-pointer`}
               />
               <div className="dropdown-content ">
                 <Link to="/login">
@@ -326,7 +326,7 @@ const handleProductClick = (data) => {
               <div className="dropdown">
                 <i
                   onClick={gotoLogin}
-                  className={`fa-regular fa-user text-white fa-lg  cursor-pointer text-2xl z-50`}
+                  className={`fa-solid fa-user text-white fa-lg  cursor-pointer text-2xl z-50`}
                 />
                 <div className="dropdown-content ">
                   {auth.currentUser ? (
