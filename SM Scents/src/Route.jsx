@@ -27,7 +27,7 @@ import WomensPerfumes from "./pages/WomensPerfumes.jsx";
 import WhatsApp from "./components/WhatsApp.jsx";
 import DeliveredOrders from "./pages/deliveredOrders.jsx";
 import DeletedOrders from "./pages/DeletedOrders.jsx";
-import MyUsers from "./pages/myusers.jsx";
+// import MyUsers from "./pages/myusers.jsx";
 
 function AppRouter() {
   const { user } = useContext(AuthContext);
@@ -118,7 +118,7 @@ function AppRouter() {
           )
         }
         />
-        <Route path="/myusers" element=
+        {/* <Route path="/myusers" element=
       
         {
           auth.currentUser?.uid === import.meta.env.VITE_USER_UID ||
@@ -128,7 +128,7 @@ function AppRouter() {
             <Navigate to="/notfound" />
           )
         }
-        />
+        /> */}
 
         {/* Not Found Route */}
         <Route path="/notfound" element={<NotFound />} />
