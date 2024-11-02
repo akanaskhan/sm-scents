@@ -171,8 +171,13 @@ const handleProductClick = (data) => {
                 </Link>
               </Nav.Link>
               <Nav.Link href="" className="text-white  nav-line">
-                <Link to="womens-perfumes">
+                <Link to="/womens-perfumes">
                   <div className="">Women's Perfume</div>
+                </Link>
+              </Nav.Link>
+              <Nav.Link href="" className="text-white  nav-line">
+                <Link to="/perfume-tester-box">
+                  <div className="">Tester Box</div>
                 </Link>
               </Nav.Link>
               <Nav.Link href="" className="text-white  nav-line">
