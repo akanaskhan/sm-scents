@@ -20,7 +20,7 @@ function Slider(){
       <img src="\src\assets\images\slideImage2.jpg" className="d-block w-100" alt="..." />
     </div>
     <div className="carousel-item">
-      <img src="\src\assets\images\slideImage3.jpg" className="d-block w-100" alt="..." />
+      <img src={image1} className="d-block w-100" alt="..." />
     </div>
   </div>
   <button
