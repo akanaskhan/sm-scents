@@ -22,12 +22,12 @@ import { auth } from "./utils/firebase.js";
 import CheckOut from "./pages/CheckOut.jsx";
 import { message } from "antd";
 import AllOrders from "./pages/orders.jsx";
-import MyUsers from "./pages/myusers.jsx";
 import MalePerfumes from "./pages/MalePerfumes.jsx";
 import WomensPerfumes from "./pages/WomensPerfumes.jsx";
 import WhatsApp from "./components/WhatsApp.jsx";
 import DeliveredOrders from "./pages/deliveredOrders.jsx";
 import DeletedOrders from "./pages/DeletedOrders.jsx";
+import MyUsers from "./pages/myusers.jsx";
 
 function AppRouter() {
   const { user } = useContext(AuthContext);
