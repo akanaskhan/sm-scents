@@ -21,7 +21,7 @@ function Checkout() {
     0
   );
   const totalAmountWithSipping = cartItems.reduce(
-    (total, obj) => total + obj.quantity * obj.price + 200,
+    (total, obj) => total + obj.quantity * obj.SalePrice + 200,
     0
   );
   const totalQuantity = cartItems.reduce(
@@ -255,7 +255,7 @@ function Checkout() {
                     </div>
                   </div>
                   <div className="ml-12 ">
-                    <p className="font-normal  mb-2">Rs: {product.price}/-</p>
+                    <p className="font-normal  mb-2">Rs: {product.SalePrice}/-</p>
                   </div>
                   <div></div>
                 </div>

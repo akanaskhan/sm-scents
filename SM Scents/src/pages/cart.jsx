@@ -9,7 +9,7 @@ function Cart() {
     useContext(CartContext);
 
   const totalAmount = cartItems.reduce(
-    (total, obj) => total + obj.quantity * obj.price,
+    (total, obj) => total + obj.quantity * obj.SalePrice,
     0
   );
   const totalQuantity = cartItems.reduce(

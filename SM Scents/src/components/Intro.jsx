@@ -1,7 +1,8 @@
 import React from "react";
 import { Button } from "antd";
 import intro  from '../assets/images/intro.jpg'
-
+import {Link} from 'react-router-dom'
+ 
 
 function Intro() {
   const image1 =
@@ -33,11 +34,12 @@ function Intro() {
                 </p>
               </div>
               <div className="mt-3 my-4">
-                <a className="a" href="">
+                <Link to="/aboutUs">
                   <button className="btn  learn-btn transition-all">
                     Learn More..
                   </button>
-                </a>
+                </Link>
+              
               </div>
             </div>
             <div className="right-main img-div col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">

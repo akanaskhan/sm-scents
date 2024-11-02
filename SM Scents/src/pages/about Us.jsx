@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import about from "../assets/images/about.jpg";
+import { Spin } from 'antd';
 
 const AboutUs = () => {
   // Static data defined within the component
@@ -22,7 +24,7 @@ const AboutUs = () => {
         content: "Our dedication to creativity, quality, and customer satisfaction makes us a trusted choice for those who appreciate fine fragrances. Join us in our journey to explore the world of premium scents."
       },
     ],
-    image:     "https://plus.unsplash.com/premium_photo-1673277281977-3614760f01ec?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: about
     // Replace with an actual URL for the About Us image
   };
 
@@ -35,7 +37,7 @@ const AboutUs = () => {
   }, []);
 
   if (!data) {
-    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+    return <div className="flex justify-center items-center h-screen"><Spin/></div>;
   }
 
   return (
@@ -43,8 +45,8 @@ const AboutUs = () => {
       <h1 className="text-4xl font-bold text-center mb-8">{data.title}</h1>
       
       {data.image && (
-        <div className="flex justify-center mb-8">
-          <img src={data.image} alt="About Us" className="w-full h-auto rounded-md shadow-md" />
+        <div className="flex justify-center mb-8 h-1/3">
+          <img src={data.image} alt="About Us" className="w-full  object-cover rounded-md shadow-md" />
         </div>
       )}
       

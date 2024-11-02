@@ -28,6 +28,7 @@ import WhatsApp from "./components/WhatsApp.jsx";
 import DeliveredOrders from "./pages/deliveredOrders.jsx";
 import DeletedOrders from "./pages/DeletedOrders.jsx";
 import { Tester } from "./pages/tester.jsx";
+import AddTesters from "./pages/addTesters.jsx";
 // import MyUsers from "./pages/myusers.jsx";
 
 function AppRouter() {
@@ -64,6 +65,17 @@ function AppRouter() {
             auth.currentUser?.uid === import.meta.env.VITE_USER_UID ||
             auth.currentUser?.uid === import.meta.env.VITE_USER2_UID ? (
               <AddProduct />
+            ) : (
+              <Navigate to="/notfound" />
+            )
+          }
+        />
+        <Route
+          path="/AddTesters"
+          element={
+            auth.currentUser?.uid === import.meta.env.VITE_USER_UID ||
+            auth.currentUser?.uid === import.meta.env.VITE_USER2_UID ? (
+              <AddTesters />
             ) : (
               <Navigate to="/notfound" />
             )

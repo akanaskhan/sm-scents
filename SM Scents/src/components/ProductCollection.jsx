@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import mensPerfume from "../assets/images/Bad boy.jpg";
+import womensPerfume from "../assets/images/women.jpg";
+import tester2 from "../assets/images/tester2.jpg";
+
+
 
 export default function ProductCollection() {
-  const image1 =
-    "https://plus.unsplash.com/premium_photo-1673277281977-3614760f01ec?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   return (
     <>
@@ -15,7 +18,7 @@ export default function ProductCollection() {
             <Link to="/mens-perfumes">
             <div className="f-image1 ">
               <div className="f-large ">
-                <img className="f-img1 hover-img" src={image1} alt="" />
+                <img className="f-img1 hover-img" src={mensPerfume} alt="mens Perfume" />
                 <div className="f1-content ">
                   <div className="last-line">
                     <p className="text-3xl hover:underline">
@@ -26,10 +29,10 @@ export default function ProductCollection() {
               </div>
             </div>
             </Link>
-            <Link to="womens-perfumes">
+            <Link to="/womens-perfumes">
             <div className="f-image1 ">
               <div className="f-large ">
-                <img className="f-img1 hover-img" src={image1} alt="" />
+                <img className="f-img1 hover-img" src={womensPerfume} alt="womens Perfume" />
                 <div className="f1-content ">
                   <div className="last-line">
                     <p className="text-3xl hover:underline">
@@ -40,21 +43,21 @@ export default function ProductCollection() {
               </div>
             </div>
             </Link>
-            <Link to="">
+            <Link to="/perfume-tester-box">
             <div className="f-image1 ">
               <div className="f-large ">
-                <img className="f-img1 hover-img" src={image1} alt="" />
+                <img className="f-img1 hover-img" src={tester2} alt="tester box" />
                 <div className="f1-content ">
                   <div className="last-line">
                     <p className="text-3xl hover:underline">
-                      Gift Boxes
+                    Tester Box
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             </Link>
-            <Link to="">
+            {/* <Link to="">
             <div className="f-image1 ">
               <div className="f-large ">
                 <img className="f-img1 hover-img" src={image1} alt="" />
@@ -95,7 +98,7 @@ export default function ProductCollection() {
                 </div>
               </div>
             </div>
-            </Link>
+            </Link> */}
 
            
           </div>

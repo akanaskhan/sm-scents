@@ -102,7 +102,7 @@ const handleProductClick = (data) => {
         <Container>
           {/* Custom Toggle Button */}
           <button
-            className="navbar-toggler"
+            className="navbar-toggler pl-0"
             type="button"
             onClick={() => setExpanded(expanded ? false : true)} // Toggle state
             aria-controls="basic-navbar-nav"
@@ -127,19 +127,13 @@ const handleProductClick = (data) => {
           </Navbar.Brand>
 
           <div className="d-lg-none">
-            {/* <i className="fa-solid fa-magnifying-glass text-white fa-lg  cursor-pointer navbar-toggler "
-        
-            type="button"
-            onClick={() => setExpanded(expanded ? false : true)} // Toggle state
-            aria-controls="basic-navbar-nav"
-            aria-expanded={expanded}
-            /> */}
+          
             <Link to={"/cart"}>
               <Badge
                 count={cartItems.length}
                 className={cartItems.length > 0 ? "mr-2 " : "mr-0"}
               >
-                <i className="fa-solid fa-cart-shopping text-white fa-lg cursor-pointer m-2" />
+                <i className="fa-solid fa-cart-shopping  text-white fa-lg cursor-pointer m-2" />
               </Badge>
             </Link>
 
@@ -235,37 +229,7 @@ const handleProductClick = (data) => {
 
 
               </div>
-              {/* <NavDropdown
-                className="text-white"
-                title={
-                  <span className="text-white">
-                    Dropdown <i className="fa fa-caret-down" />
-                  </span>
-                }
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="">Gift Box</NavDropdown.Item>
-                <NavDropdown.Item href="">
-                 Testers
-                </NavDropdown.Item>
-                <NavDropdown.Item href="">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="">Separated link</NavDropdown.Item>
-              </NavDropdown> */}
-              {/* {auth.currentUser ? (
-                <button
-                  onClick={HandleSignOut}
-                  className="bg-white p-2 px-3 rounded-lg text-black hover:rounded-3xl delay-150 all ease-in-out duration-100"
-                >
-                  Log Out
-                </button>
-              ) : (
-                <Link to="/login">
-                  <button className="bg-white p-2 px-3 rounded-lg text-black hover:rounded-3xl delay-150 all ease-in-out duration-100">
-                    Login
-                  </button>
-                </Link>
-              )} */}
+              
             </Nav>
           </Navbar.Collapse>
 
@@ -282,7 +246,7 @@ const handleProductClick = (data) => {
                   }}
                 />
                 <button className="absolute top-1 right-1.5">
-                  <i className="fa-solid fa-magnifying-glass text-black fa-lg cursor-pointer " />
+                  <i className="fa-solid fa-magnifying-glass  text-black fa-lg cursor-pointer " />
                 </button>
                 {showDropdown  && (
                 <div className="size-96 z-50 absolute bg-white border mt-1 rounded-xl w-56 max-h-64 overflow-y-auto">

@@ -31,7 +31,7 @@ const items = [
   getItem('All Product', '2', <FileOutlined />, null, '/products'), // Option 1 navigates to /option1
   getItem('Orders', '3', <ShoppingCartOutlined />, null, '/orders'),
   getItem('Cancelled', '3', <ShoppingCartOutlined />, null, '/deleted-orders'),
-  // getItem('Users', '4', <UserOutlined />, null,'/myusers' ),
+  getItem('Add Testers', '4', <FileOutlined />, null,'/AddTesters' ),
   // getItem('Orders', 'sub1', <ShoppingCartOutlined />, [
   //   getItem('Confirmed', '5', null, null, '/user/tom'),
   //   getItem('Cancelled', '6', null, null, '/deleted-orders'),

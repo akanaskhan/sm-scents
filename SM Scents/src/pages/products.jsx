@@ -6,7 +6,7 @@ import { Button, Spin } from "antd";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime"; // ES 2015
+import relativeTime from "dayjs/plugin/relativeTime"; 
 import ScrollAnimation from "react-animate-on-scroll";
 import { CartContext } from "../context/CartContext";
 import AddToCartBtn from "../components/AddToCartBtn";
@@ -94,9 +94,7 @@ function AllProducts() {
                           : `Add to Cart`}
                       </button>
                     </div>
-                    {/* <div className="p-2">
-                        <h1>{dayjs().to(data.createdAt.toDate())}</h1>
-                      </div> */}
+                   
                   </div>
                 </div>
               ))}

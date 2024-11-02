@@ -72,25 +72,25 @@ function GetProducts() {
                         <img src={data?.img} className="hover-img rounded" />
                       </div>
                     </div>
-                    <div className="p-2">
+                    <div className="p-2 pb-0">
                       <h1 className="text-xl font-semibold">{data?.title}</h1>
                       <div className="flex justify-between flex-col mb-2">
                         <h1 className="my-1">{data?.category}</h1>
                         <h1 className="text-gray-600 hide-text">{data?.ProductCategory}</h1>
                         <div className="flex gap-2 text-lg">
-                        <h1 className="font-bold my-2 text-gray-600"><del>Rs. {data?.price}</del></h1>
+                        <h1 className="font-bold mt-2 text-gray-600"><del>Rs. {data?.price}</del></h1>
                         
-                        <h1 className="font-bold my-2">Rs. {data?.SalePrice}</h1>
+                        <h1 className="font-bold mt-2">Rs. {data?.SalePrice}</h1>
 
                         </div>
-                        <button
+                        {/* <button
                           className="learn-btn lg:px-3 p-2 text-md  rounded transition-all"
                           onClick={() => addItemToCart(data)}
                         >
                           {isItemAdded(data.id)
                             ? `Added (${isItemAdded(data.id).quantity})`
                             : `Add to Cart`}
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>

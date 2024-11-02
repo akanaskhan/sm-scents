@@ -1,5 +1,5 @@
 import Image10 from "../assets/images/slideImage1.jpg";
-import Image11 from "../assets/images/slideImage2.jpg";
+import SliderImage3 from "../assets/images/slideImage3.jpg";
 import Banner1 from "../assets/images/Black And White Modern Fashion Sale Banner Landscape.png";
 function Slider() {
   const image1 =
@@ -29,7 +29,7 @@ function Slider() {
             <img src={Image10} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={Image11} className="d-block w-100" alt="..." />
+            <img src={SliderImage3} className="d-block w-100" alt="..." />
           </div>
         </div>
         <button

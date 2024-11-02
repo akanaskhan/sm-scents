@@ -33,8 +33,8 @@ function LogIn() {
         if(
           (auth.currentUser?.uid) === (import.meta.env.VITE_USER_UID) ||
           (auth.currentUser?.uid) === (import.meta.env.VITE_USER2_UID)){
-          navigate("/admin")
-          message.success("Admin Login Successfully")
+            message.success("Admin Login Successfully")
+            navigate("/admin")
           
         }else{
           navigate("/");
