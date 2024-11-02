@@ -122,7 +122,7 @@ const handleProductClick = (data) => {
           </button>
 
           <Navbar.Brand className="mx-auto w-12 md:w-18 lg:w-16" href="#home">
-            <img src="/src/assets/logo.png" alt="Logo" />
+            <img src="src/assets/logo.png" alt="Logo" />
           </Navbar.Brand>
 
           <div className="d-lg-none">
