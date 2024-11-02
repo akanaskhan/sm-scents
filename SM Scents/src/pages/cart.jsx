@@ -55,7 +55,7 @@ function Cart() {
         >
           <div className= "max-w-full h-fit lg:w-3/6">
 
-          <Image className="rounded " src={data.img}  />
+          <Image className="rounded h-96 " src={data.img}  />
           </div>
 
           <div className="flex flex-col pl-5">
