@@ -9,7 +9,7 @@ function Cart() {
     useContext(CartContext);
 
   const totalAmount = cartItems.reduce(
-    (total, obj) => total + obj.quantity * obj.SalePrice,
+    (total, obj) => total + obj.quantity * obj.price,
     0
   );
   const totalQuantity = cartItems.reduce(
@@ -50,20 +50,20 @@ function Cart() {
 
       {cartItems.map((data, index) => (
         <div
-          key={data.id || `cart-item-${index}`} // Use index as a fallback
+          key={data?.id || `cart-item-${index}`} // Use index as a fallback
           className="flex items-center border my-2 p-3 rounded"
         >
           <div className= "max-w-full h-fit lg:w-3/6">
 
-          <Image className="rounded h-96 " src={data.img}  />
+          <Image className="rounded h-96 " src={data?.img}  />
           </div>
 
           <div className="flex flex-col pl-5">
             <h1 className="font-medium text-lg mb-1">
-              {data.title} {`(${data.category})`}
+              {data?.title} {`(${data?.category})`}
             </h1>
             <p className="font-normal hide-text w-full lg:w-2/4  mb-2">{data.desc}</p>
-            <h1 className=" font-bold mb-2">Price : {data.SalePrice}/-</h1>
+            <h1 className=" font-bold mb-2">Price : {data?.SalePrice}/-</h1>
             <h1 className="font-normal  mb-2">Quantity:</h1>
             <div className="flex gap-3 items-center">
               <Button
@@ -77,13 +77,13 @@ function Cart() {
                 danger
                 className="border border-black text-black"
                 icon={<MinusOutlined />}
-                onClick={() => lessQuantityFromCart(data.id)}
-                disabled={data.quantity === 1}
+                onClick={() => lessQuantityFromCart(data?.id)}
+                disabled={data?.quantity === 1}
               ></Button>
             </div>
 
             <Button
-              onClick={() => removeItemFromCart(data.id)}
+              onClick={() => removeItemFromCart(data?.id)}
               danger
               className="w-32 my-3"
             >
