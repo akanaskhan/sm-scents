@@ -10,7 +10,8 @@ export function Tester() {
 
     const testerBox = {
     title: "Tester Box",
-    price: "1200",
+    category: "5x10ml",
+    SalePrice: "1200",
     img: tester1
     }
   return (
