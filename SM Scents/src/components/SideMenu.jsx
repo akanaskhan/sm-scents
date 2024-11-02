@@ -30,12 +30,13 @@ const items = [
   getItem('Add Product', '1', <FileOutlined />, null, '/addproduct'), // Option 1 navigates to /option1
   getItem('All Product', '2', <FileOutlined />, null, '/products'), // Option 1 navigates to /option1
   getItem('Orders', '3', <ShoppingCartOutlined />, null, '/orders'),
-  getItem('Users', '4', <UserOutlined />, null,'/myusers' ),
-  getItem('Orders', 'sub1', <ShoppingCartOutlined />, [
-    getItem('Confirmed', '5', null, null, '/user/tom'),
-    getItem('Cancelled', '6', null, null, '/deleted-orders'),
-    getItem('Ready to ship', '7', null, null, '/user/alex'),
-  ]),
+  getItem('Cancelled', '3', <ShoppingCartOutlined />, null, '/deleted-orders'),
+  // getItem('Users', '4', <UserOutlined />, null,'/myusers' ),
+  // getItem('Orders', 'sub1', <ShoppingCartOutlined />, [
+  //   getItem('Confirmed', '5', null, null, '/user/tom'),
+  //   getItem('Cancelled', '6', null, null, '/deleted-orders'),
+  //   getItem('Ready to ship', '7', null, null, '/user/alex'),
+  // ]),
   // getItem('Team', 'sub2', <TeamOutlined />, [
   //   getItem('Team 1', '8', null, null, '/team/team1'),
   //   getItem('Team 2', '9', null, null, '/team/team2'),
