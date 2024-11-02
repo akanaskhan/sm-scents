@@ -14,6 +14,7 @@ import { CartContext } from "../context/CartContext";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { data } from "autoprefixer";
 
+
 function NavBar() {
   const [expanded, setExpanded] = useState(false); // State to track toggle status
   const [isOpen1, setIsOpen1] = useState(false);
