@@ -27,6 +27,7 @@ import WomensPerfumes from "./pages/WomensPerfumes.jsx";
 import WhatsApp from "./components/WhatsApp.jsx";
 import DeliveredOrders from "./pages/deliveredOrders.jsx";
 import DeletedOrders from "./pages/DeletedOrders.jsx";
+import { Tester } from "./pages/tester.jsx";
 // import MyUsers from "./pages/myusers.jsx";
 
 function AppRouter() {
@@ -54,6 +55,7 @@ function AppRouter() {
         <Route path="/Home" element={<Home />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/perfume-tester-box" element={<Tester />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<LogIn />} />
         <Route
