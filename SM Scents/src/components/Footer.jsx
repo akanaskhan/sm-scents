@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../assets/images/logo.png'
 
 
 export default function Footer() {
@@ -9,7 +10,7 @@ export default function Footer() {
 
             <img
               className="w-16"
-              src="/src/assets/logo.png"
+              src={logo}
               alt="SM Scents Logo"
             />
         </div>
