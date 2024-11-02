@@ -17,7 +17,7 @@ function Checkout() {
     useContext(CartContext);
   const navigate = useNavigate();
   const totalAmount = cartItems.reduce(
-    (total, obj) => total + obj.quantity * obj.price,
+    (total, obj) => total + obj.quantity * obj.SalePrice,
     0
   );
   const totalAmountWithSipping = cartItems.reduce(
