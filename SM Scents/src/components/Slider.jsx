@@ -1,4 +1,5 @@
 import Image10 from '../assets/images/slideImage1.jpg';
+import Banner1 from '../assets/images/Black And White Modern Fashion Sale Banner Landscape.png';
 function Slider(){
 
 
@@ -15,7 +16,7 @@ function Slider(){
 >
   <div className="carousel-inner carousel">
     <div className="carousel-item active   ">
-      <img src="/src/assets/images/Black And White Modern Fashion Sale Banner Landscape.png" className="d-block w-100" alt="..." loading="lazy" />
+      <img src={Banner1} className="d-block w-100" alt="..." loading="fast" />
     </div>
     <div className="carousel-item">
       <img src={Image10} className="d-block w-100" alt="..." />
