@@ -13,7 +13,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { CartContext } from "../context/CartContext";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { data } from "autoprefixer";
-
+import logo from '../assets/images/logo.png'
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false); // State to track toggle status
@@ -123,7 +123,7 @@ const handleProductClick = (data) => {
           </button>
 
           <Navbar.Brand className="mx-auto w-12 md:w-18 lg:w-16" href="#home">
-            <img src="src/assets/logo.png" alt="Logo" />
+            <img src={logo} alt="Logo" />
           </Navbar.Brand>
 
           <div className="d-lg-none">
