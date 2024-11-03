@@ -4,14 +4,14 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa6';
 
 const ContactUs = () => {
   const contactData = {
-    phone: "+92-300-1234567",
-    email: "info@smscents.com",
-    address: "123 Fragrance Avenue, Karachi, Pakistan",
+    phone: "+92-302-1953486",
+    email: "officialsmscents@gmail.com",
+    // address: "123 Fragrance Avenue, Karachi, Pakistan",
     socialMedia: [
-      { platform: "Facebook", url: "https://facebook.com/yourbrand", icon: <FaFacebook/> },
-      { platform: "Instagram", url: "https://instagram.com/yourbrand", icon: <FaInstagram/> },
-      { platform: "Twitter", url: "https://twitter.com/yourbrand", icon: <BsTwitterX/> },
-      { platform: "TikTok", url: "https://tiktok.com/company/yourbrand", icon: <BsTiktok/> },
+      { platform: "Facebook", url: "https://www.facebook.com/officialsmscents", icon: <FaFacebook/> },
+      { platform: "Instagram", url: "https://www.instagram.com/officialsmscents", icon: <FaInstagram/> },
+      // { platform: "Twitter", url: "https://twitter.com/yourbrand", icon: <BsTwitterX/> },
+      { platform: "TikTok", url: "https://www.tiktok.com/@officialsmscents", icon: <BsTiktok/> },
     ]
   };
 
@@ -22,7 +22,7 @@ const ContactUs = () => {
       <div className="mb-8 text-center">
         <p className="text-lg"><strong>Phone:</strong> {contactData.phone}</p>
         <p className="text-lg"><strong>Email:</strong> <a href={`mailto:${contactData.email}`} className="text-blue-600">{contactData.email}</a></p>
-        <p className="text-lg"><strong>Address:</strong> {contactData.address}</p>
+        {/* <p className="text-lg"><strong>Address:</strong> {contactData.address}</p> */}
       </div>
 
       <div className="mb-8">
@@ -48,7 +48,7 @@ const ContactUs = () => {
           ></textarea>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700"
+            className="w-full  py-2 rounded-md font-semibold learn-btn transition-all "
           >
             Send Message
           </button>
