@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
+import GoogleIcon from '../../assets/images/googleIcon.svg';
+
 
 function SignUp() {
   const navigate = useNavigate();
@@ -175,7 +177,7 @@ function SignUp() {
         >
           <img
             className="w-9 pr-2"
-            src="/src/assets/images/googleIcon.svg"
+            src={GoogleIcon}
             alt=""
           />
           Sign Up with Google
