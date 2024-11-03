@@ -16,7 +16,7 @@ function AuthContextProvider({ children }) {
         const docRef = doc(db, "users", user.uid);
         try {
           const userInfo = (await getDoc(docRef)).data();
-          console.log("userInfo=>", userInfo);
+          // console.log("userInfo=>", userInfo);
 
           // Only set the user state if userInfo is not undefined
           setUser({

@@ -49,34 +49,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-const getProductInfo = async (id) => {
-  const docRef = doc(db, "products", id);
-  const prouductInfo = getDoc(docRef);
-  return await prouductInfo;
-};
 
-const getProductBids = async (id) => {
-  const bidCollectionRef = collection(db, "bids");
-  const q = query(bidCollectionRef, where("productId", "==", id));
-  return await getDocs(q);
-};
-
-const updateBidStatus = async (bidId, status) => {
-  const bidCollectionRef = doc(db, "bids", bidId);
-  const updated = await updateDoc(bidCollectionRef, { status });
-  return updated;
-};
-const getUserBids = async (userId) => {
-  const bidCollectionRef = collection(db, "bids");
-  const q = query(bidCollectionRef, where("userId", "==", userId));
-  return await getDocs(q);
-};
-
-const getUserProducts = async (userId) => {
-  const bidCollectionRef = collection(db, "products");
-  const q = query(bidCollectionRef, where("createdBy", "==", userId));
-  return await getDocs(q);
-};
 
 
 

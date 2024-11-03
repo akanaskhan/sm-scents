@@ -21,7 +21,7 @@ function SignUp() {
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const user = result.user;
-        console.log("results=>", result);
+        // console.log("results=>", result);
         const ref = doc(db, "users", user.uid);
         setDoc(ref, {
           email: user.email,

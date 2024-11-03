@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { db } from "../utils/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { Spin, Table } from "antd";
+import SideMenu from "../components/SideMenu";
 
 export default function DeletedOrders() {
   const [deletedOrders, setDeletedOrders] = useState([]);
@@ -82,6 +83,8 @@ export default function DeletedOrders() {
           <Spin className="w-28 h-28" />
         </div>
       ) : (
+        <div className="flex">
+            <SideMenu/>
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-center my-4 text-center items-center">
             <h1 className="text-4xl font-black underline">Deleted Orders</h1>
@@ -93,6 +96,7 @@ export default function DeletedOrders() {
             bordered
             pagination={{ pageSize: 5 }}
           />
+        </div>
         </div>
       )}
     </>
