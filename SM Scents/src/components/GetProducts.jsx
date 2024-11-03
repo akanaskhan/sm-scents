@@ -1,7 +1,6 @@
 import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { db } from "../utils/firebase";
-// import { categories } from "../../utils/categories";
 import { Button, Spin, Badge } from "antd";
 import { useNavigate } from "react-router";
 import ScrollAnimation from "react-animate-on-scroll";

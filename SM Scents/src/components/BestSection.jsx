@@ -3,7 +3,7 @@ export default function BestSection() {
     <div className="container flex justify-center my-12">
       <div className="text-center w-3/4 flex flex-col gap-5">
         <div>
-          <div className="text-3xl font-bold my-3 uppercase text-black">Best Perfumes for Men</div>
+          <div className="text-3xl font-bold my-3 uppercase text-black hover:underline transition-all">Best Perfumes for Men</div>
           <div>
             At SM Scents, our collection features 10 premium fragrances
             designed to leave a lasting impression. From the elegant Ocean Floor

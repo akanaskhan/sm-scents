@@ -8,7 +8,7 @@ import { IoIosTimer } from "react-icons/io";
 export default function ChooseSection() {
   return (
     <>
-      <div className="container mt-5">
+      <div className="container py-5  rounded">
         <div className="uppercase text-center text-black text-3xl font-bold">
           Why Choose Us?
         </div>

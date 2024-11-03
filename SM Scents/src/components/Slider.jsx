@@ -2,12 +2,6 @@ import Image10 from "../assets/images/slideImage1.jpg";
 import SliderImage3 from "../assets/images/slideImage3.jpg";
 import Banner1 from "../assets/images/Black And White Modern Fashion Sale Banner Landscape.png";
 function Slider() {
-  const image1 =
-    "https://plus.unsplash.com/premium_photo-1673277281977-3614760f01ec?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-  const image2 =
-    "https://plus.unsplash.com/premium_photo-1673823666079-e3991760176c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-  const image3 =
-    "https://images.unsplash.com/photo-1635796332668-78830169097d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   return (
     <div className="">
@@ -22,7 +16,6 @@ function Slider() {
               src={Banner1}
               className="d-block w-100"
               alt="..."
-              loading="fast"
             />
           </div>
           <div className="carousel-item">
