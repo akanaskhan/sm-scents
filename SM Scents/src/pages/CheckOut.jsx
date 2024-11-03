@@ -218,13 +218,8 @@ function Checkout() {
               >
                 Complete order
               </button>
-              {/* <input
-              placeholder=""
-                className="bg-purple-200
-        my-4
-        inline rounded cursor-pointer mx-auto p-2 px-4"
-                type="submit"
-              /> */}
+              
+             
             </form>
           </div>
 
@@ -261,13 +256,7 @@ function Checkout() {
                 </div>
               ))}
               <div>
-                {/* Render cart items */}
-                {/* {cartItems.map((product, index) => (
-    <div key={index} className="flex justify-between px-4">
-      <p className="font-semibold">{product.name}</p>
-      <p>{product.quantity} x Rs. {product.price}</p>
-    </div>
-  ))} */}
+               
 
                 {/* Display subtotal, shipping, and total once */}
                 <div className="flex flex-col mt-4 bg-gray-100 rounded py-3 amountSection">
@@ -294,6 +283,10 @@ function Checkout() {
                   <div className="flex justify-between px-4">
                     <p className="font-normal">Shipping</p>
                     <p>Rs. 200</p>
+                  </div>
+                  <div className="px-4 mt-3 mb-2">
+
+                    <hr/> 
                   </div>
                   <div className="flex justify-between px-4 font-bold text-lg">
                     <p className="font-semibold">Total</p>

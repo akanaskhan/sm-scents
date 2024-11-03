@@ -52,7 +52,7 @@ function AllProducts() {
         <div className="container mx-auto">
           <div>
             <div className="flex justify-center my-4 text-center items-center">
-              <h1 className="text-4xl font-black underline">All Perfumes</h1>
+              <h1 className="text-4xl font-black text-black underline">All Perfumes</h1>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-8">
               {products?.map((data) => (
@@ -75,7 +75,7 @@ function AllProducts() {
                   )}
                   <div className=" bg-white z-50">
                     <div className="p-2">
-                      <h1 className="text-xl font-semibold">{data?.title}</h1>
+                      <h1 className="text-xl font-semibold seach-category">{data?.title}</h1>
                       <h1 className="">{data?.category}</h1>
                       <div className="flex gap-2  mb-2 text-lg">
                      

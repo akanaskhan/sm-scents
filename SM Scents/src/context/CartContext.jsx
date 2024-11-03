@@ -25,23 +25,10 @@ export default function CartContextProvider({ children }) {
     }
   }, [cartItems, user]);
 
-  // Function to sync cart items with Firestore
-  // const syncCartWithFirestore = async (cartItems) => {
-  //   if (!user || !user.uid) return;
+ 
 
-  //   try {
-  //     const userCartRef = doc(db, "user cart", user.uid);
-  //     await setDoc(userCartRef, { cartItems }, { merge: true });
-  //     console.log("Cart items synced with Firestore.");
-  //   } catch (error) {
-  //     console.error("Error syncing cart with Firestore:", error);
-  //   }
-  // };
   function addItemToCart(product) {
     const arr = cartItems;
-    //item add nahn he , to add krdo
-    //agr item add he , to uski quantity barhado
-    //check if item exist
     const itemIndex = cartItems.findIndex((data) => data.id == product.id);
     if (itemIndex == -1) {
       // item array mein nahn he

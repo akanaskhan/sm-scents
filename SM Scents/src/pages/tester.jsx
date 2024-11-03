@@ -135,7 +135,7 @@ export function Tester() {
           ) : (
             <div className="text-xl text-center">
 
-            <p>No men's perfumes available.</p>
+            <p>Not Found.</p>
             </div>
           )}
 

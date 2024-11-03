@@ -43,7 +43,7 @@ function Intro() {
               </div>
             </div>
             <div className="right-main img-div col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-              <img className="main-img" src={intro} alt="" />
+              <img className="main-img rounded" src={intro} alt="" />
             </div>
           </div>
         </div>

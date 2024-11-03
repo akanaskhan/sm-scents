@@ -29,14 +29,15 @@ export default function Admin(){
         <div className="w-screen h-screen flex flex-col gap-2">
             <div className="text-center  font-black text-3xl">Hello {user.displayName}</div>
             <div className="text-center  font-black text-3xl">Welcome to Admin Panel</div>
-            <Link to={"/addproduct"}>
-            <button className="btn  learn-btn">Add Products</button>
-            </Link>
-            <Link>
+           
+          
+            <div className="items-end text-end">
+
             <button className="btn  learn-btn"
             onClick={HandleSignOut}
             >Log Out</button>
-            </Link>
+          
+            </div>
           
         </div>
         
