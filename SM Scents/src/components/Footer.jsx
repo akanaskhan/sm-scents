@@ -70,7 +70,7 @@ export default function Footer() {
 
           <div className="f-col3  col-12 col-sm-6 col-md-6 col-lg-8 col-xl-2 col-xxl-3">
             <ul className="f-list ">
-              <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
+              {/* <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
                 <form action="">
                   <div className="bg-white pr-2 nav-link  rounded-2xl flex flex-row">
                     <input
@@ -83,6 +83,12 @@ export default function Footer() {
                     </button>
                   </div>
                 </form>
+              </li> */}
+              <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
+               
+                <Link to="/perfume-tester-box" className="nav-link text-white">
+                  <div className="nav-line">Tester Box</div>
+                   </Link>
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
                
@@ -115,7 +121,7 @@ export default function Footer() {
             <div className="items-center">
               <div className="flex justify-center">
                 <div className="s-icons m-1 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-150">
-                  <a className="" href="#">
+                  <a className="" href="https://www.facebook.com/officialsmscents" target="_blank">
                     <i
                       className="fa-brands fa-facebook-f s-btn px-2.5 text-xl"
                       style={{ color: "#316FF6" }}
@@ -123,13 +129,13 @@ export default function Footer() {
                   </a>
                 </div>
                 <div className="s-icons m-1 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-150">
-                  <a className="" href="#">
+                  <a className="" href="https://www.instagram.com/officialsmscents" target="_blank">
                     <i className="fa-brands fa-instagram instagram s-btn text-xl"  />
                   </a>
                 </div>
 
                 <div className="s-icons m-1 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-150">
-                  <a className="" href="#">
+                  <a className="" href="https://api.whatsapp.com/send/?phone=923021953486" target="_blank">
                     <i
                       className="fa-brands fa-whatsapp  s-btn text-xl "
                       style={{
@@ -140,7 +146,7 @@ export default function Footer() {
                   </a>
                 </div>
                 <div className="s-icons m-1 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-150">
-                  <a className="" href="#">
+                  <a className="" href="https://www.tiktok.com/@officialsmscents" target="_blank">
                     <i className="fa-brands fa-tiktok  s-btn text-xl" />
                   </a>
                 </div>
