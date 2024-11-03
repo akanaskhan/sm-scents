@@ -73,7 +73,7 @@ function GetProducts() {
                       </div>
                     </div>
                     <div className="p-2 pb-0">
-                      <h1 className="text-xl font-semibold">{data?.title}</h1>
+                      <h1 className="text-xl font-semibold line-clamp-1">{data?.title}</h1>
                       <div className="flex justify-between flex-col mb-2">
                         <h1 className="my-1">{data?.category}</h1>
                         <h1 className="text-gray-600 hide-text">{data?.ProductCategory}</h1>
