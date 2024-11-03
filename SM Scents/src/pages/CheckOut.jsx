@@ -54,7 +54,7 @@ function Checkout() {
     });
   };
 
-  console.log(watch("title")); // watch input value by passing the name of it
+ 
 
   return (
     <>
@@ -153,9 +153,9 @@ function Checkout() {
                 </div>
              
               <CustomInput
-                placeholder={"Phone Number"}
-                obj={{ ...register("Phone Number", { required: true }) }}
-                errorMsg={"Phone Number is required"}
+                placeholder={"Phone Number 03XXXXXXXXX"}
+                obj={{ ...register("Phone Number", { required: true,  maxLength: 11 }) }}
+                errorMsg={"Phone Number is required and length should be 11"}
                 formKey={"Phone Number"}
                 type={"number"}
                 errors={errors}
@@ -227,7 +227,7 @@ function Checkout() {
             <div>
               {cartItems.map((product, index) => (
                 <div
-                  key={product.id || `cart-item-${index}`} // Use index as a fallback
+                  key={product.id || `cart-item-${index}`}
                   className="flex justify-stretch 
                   border my-2 p-3 rounded"
                 >
@@ -258,7 +258,7 @@ function Checkout() {
               <div>
                
 
-                {/* Display subtotal, shipping, and total once */}
+             
                 <div className="flex flex-col mt-4 bg-gray-100 rounded py-3 amountSection">
                   <div className="flex justify-between px-4">
                     <div className="flex justify-between items-baseline">

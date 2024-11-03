@@ -58,9 +58,5 @@ export {
   auth,
   db,
   storageDB,
-  getProductInfo,
-  getUserBids,
-  getProductBids,
-  updateBidStatus,
-  getUserProducts,
+ 
 }

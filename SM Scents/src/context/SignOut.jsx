@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 export const SignOut = createContext();
 function SignOutContextProvider({ children }) {
   const { user } = useContext(AuthContext);
-  // const [user, setUser] = useState({ isLogin: false });
   const [HandleSignOut, setHandleSignOut] = useState(true);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
