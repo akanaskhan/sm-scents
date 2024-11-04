@@ -74,7 +74,7 @@ function GetProducts() {
                     <div className="p-2 pb-0">
                       <h1 className="text-xl font-semibold line-clamp-1">{data?.title}</h1>
                       <div className="flex justify-between flex-col mb-2">
-                        <h1 className="my-1">{data?.category}</h1>
+                        <h1 className="my-1 line-clamp-1">{data?.category}</h1>
                         <h1 className="text-gray-600 hide-text">{data?.ProductCategory}</h1>
                         <div className="flex gap-2 text-lg">
                         <h1 className="font-bold mt-2 text-gray-600"><del>Rs. {data?.price}</del></h1>

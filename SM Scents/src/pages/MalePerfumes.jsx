@@ -46,7 +46,7 @@ function MalePerfumes() {
             <Badge.Ribbon text="Sale" color="red" key={data?.id} className="">
 
 
-        <div className="border rounded-md overflow-hidden sale-ribbon" key={data?.id}>
+        <div className="border rounded-md overflow-hidden sale-ribbon shadow" key={data?.id}>
           <Link to={`/products/${data?.id}`}>
             <div className="image-box rounded">
               <img src={data?.img} alt={data?.title} className="hover-img" />

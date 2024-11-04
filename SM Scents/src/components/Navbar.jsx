@@ -100,17 +100,16 @@ const handleProductClick = (data) => {
 
       <Navbar expand="lg" className="bg-black " expanded={expanded}>
         <Container>
-          {/* Custom Toggle Button */}
+        
           <button
-            className="navbar-toggler pl-0"
+            className="navbar-toggler p-0 m-0"
             type="button"
             onClick={() => setExpanded(expanded ? false : true)} // Toggle state
             aria-controls="basic-navbar-nav"
             aria-expanded={expanded}
+              style={{padding: '0', margin: '0px'}}
           >
-            {/* <i
-            className={`fa-solid fa-bars text-white fa-lg toggle-icon ${expanded ? 'expanded' : ''}`} // Conditionally add 'expanded' class
-          /> */}
+       
             <div
               id="nav-icon4"
               className={isOpen4 ? "open" : ""}
@@ -153,7 +152,7 @@ const handleProductClick = (data) => {
           </div>
 
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto ms-10 items-center">
+            <Nav className="me-auto ms-0 lg:ms-10 xl:ms-10 items-center">
               <Nav.Link href="" className="text-white nav-line">
                 <Link to="/">
                   <div className="">Home</div>
