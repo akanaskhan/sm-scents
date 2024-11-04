@@ -85,8 +85,8 @@ function MalePerfumes() {
         </div>
       ) : (
         <div>
-          <div className="flex justify-center my-6 text-center items-center">
-            <h1 className="text-4xl font-black underline">Men's Perfumes</h1>
+          <div className="flex justify-center my-6 lg:my-10 text-center items-center">
+            <h1 className="text-3xl lg:text-4xl font-black underline">Men's Perfumes</h1>
           </div>
 
         

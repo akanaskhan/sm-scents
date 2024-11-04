@@ -152,7 +152,7 @@ const handleProductClick = (data) => {
           </div>
 
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto ms-0 lg:ms-10 xl:ms-10 items-center">
+            <Nav className="me-auto ml-0 lg:ml-10 xl:ml-10 items-center">
               <Nav.Link href="" className="text-white nav-line">
                 <Link to="/">
                   <div className="">Home</div>
