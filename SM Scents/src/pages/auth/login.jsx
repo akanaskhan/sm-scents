@@ -20,7 +20,6 @@ function LogIn() {
   const [user, setUser] = useState("");
 
   const [type, setType] = useState("password");
-  const [icon, setIcon] = useState(eyeOff);
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -91,10 +90,10 @@ function LogIn() {
                 required
               />
               <span
-                class="flex justify-around items-center"
+                className="flex justify-around items-center"
                 onClick={handleToggle}
               >
-                <Icon class="absolute mr-10" icon={icon} size={25} />
+                <Icon className="absolute mr-10" icon={icon} size={25} />
               </span>
             </div>
           </div>

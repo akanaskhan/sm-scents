@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/images/logo.png'
 
 
 export default function Footer() {
+  const scrollToTop = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+};
+
+ const navigate = useNavigate();
+
   return (
     <footer className="footer mb-0 -z-10">
       <div className="container ">
@@ -11,7 +18,12 @@ export default function Footer() {
             <img
               className="w-16"
               src={logo}
+              
               alt="SM Scents Logo"
+              onClick={() =>{
+                navigate("/")
+                scrollToTop()
+              }}
             />
         </div>
         <div className="row">
@@ -35,32 +47,32 @@ export default function Footer() {
                   aria-current="page"
                   href=""
                 > */}
-                <Link to="/home" className="nav-link text-white">
+                <Link to="/home" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">Home</div>
                    </Link>
                 {/* </a> */}
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
-                  <Link to="/mens-perfumes" className="nav-link text-white">
+                  <Link to="/mens-perfumes" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">Men's Perfume</div>
                    </Link>
                
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
-                <Link to="/womens-perfumes" className="nav-link text-white">
+                <Link to="/womens-perfumes" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">Women's Perfume</div>
                    </Link>
                 
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
             
-                <Link to="/aboutUs" className="nav-link text-white">
+                <Link to="/aboutUs" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">About Us</div>
                    </Link>
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
               
-                <Link to="/contactUs" className="nav-link text-white">
+                <Link to="/contactUs" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">Contact Us</div>
                    </Link>
               </li>
@@ -68,7 +80,7 @@ export default function Footer() {
             <hr className="text-white my-3 d-lg-none border-3" />
           </div>
 
-          <div className="f-col3  col-12 col-sm-6 col-md-6 col-lg-8 col-xl-2 col-xxl-3">
+          <div className="f-col3  col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2 col-xxl-3 ">
             <ul className="f-list ">
               {/* <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
                 <form action="">
@@ -86,14 +98,14 @@ export default function Footer() {
               </li> */}
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
                
-                <Link to="/perfume-tester-box" className="nav-link text-white">
-                  <div className="nav-line">Tester Box</div>
+                <Link to="/perfume-tester-box" className="nav-link text-white" onClick={scrollToTop}>
+                  <div className="nav-line" >Tester Box</div>
                    </Link>
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
                
-                <Link to="/" className="nav-link text-white">
-                  <div className="nav-line">Return and Exchange Policy</div>
+                <Link to="/refund-and-exchange-policy" className="nav-link text-white" onClick={scrollToTop}>
+                  <div className="nav-line">Refund and Exchange Policy</div>
                    </Link>
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
@@ -103,13 +115,13 @@ export default function Footer() {
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
                
-                <Link to="/" className="nav-link text-white">
+                <Link to="/privacy-policy" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">Privacy Policy</div>
                    </Link>
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
               
-                <Link to="/" className="nav-link text-white">
+                <Link to="/terms-and-conditions" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">Term's and Conditions</div>
                    </Link>
               </li>

@@ -27,8 +27,10 @@ import WomensPerfumes from "./pages/WomensPerfumes.jsx";
 import WhatsApp from "./components/WhatsApp.jsx";
 import DeliveredOrders from "./pages/deliveredOrders.jsx";
 import DeletedOrders from "./pages/DeletedOrders.jsx";
+import PrivacyPolicy from "./pages/privacyPolicy.jsx";
 import { Tester } from "./pages/tester.jsx";
-// import MyUsers from "./pages/myusers.jsx";
+import TermsAndConditions from "./pages/TermsAndConditons.jsx";
+import RefundExchangePolicy from "./pages/RefundAndExchangePolicy.jsx";
 
 function AppRouter() {
   const { user } = useContext(AuthContext);
@@ -135,6 +137,9 @@ function AppRouter() {
 
         {/* Not Found Route */}
         <Route path="/notfound" element={<NotFound />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/refund-and-exchange-policy" element={<RefundExchangePolicy/>} />
         <Route path="*" element={<Navigate to="/notfound" />} />
       </Routes>
       <Footer />

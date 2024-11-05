@@ -20,7 +20,7 @@ function AllProducts() {
     getProducts();
   }, []);
   const { cartItems, addItemToCart, isItemAdded } = useContext(CartContext);
-  console.log("cartItems:==> ", cartItems);
+  // console.log("cartItems:==> ", cartItems);
 
   const getProducts = async () => {
     try {
@@ -38,7 +38,10 @@ function AllProducts() {
       setLoader(false);
     }
   };
-
+  const scrollToTop = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  };
   return (
     <>
       {loader ? (
@@ -54,7 +57,7 @@ function AllProducts() {
             <div className="flex justify-center my-4 text-center items-center">
               <h1 className="text-4xl font-black text-black underline">All Perfumes</h1>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-8 " onClick={scrollToTop}>
               {products?.map((data) => (
                 <div
                   className="border rounded-md overflow-hidden"

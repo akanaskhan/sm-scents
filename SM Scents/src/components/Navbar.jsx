@@ -87,8 +87,19 @@ function NavBar() {
 const handleProductClick = (data) => {
   setShowDropdown(false); // Collapse dropdown
   navigate(`/products/${data.id}`); // Navigate to detail page
-  console.log(data.id)
+  
 };
+const scrollToTop = () => {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+};
+const handleToggle= () =>{
+
+  toggleIcon(setIsOpen4)
+  setExpanded(expanded ? false : true)
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+ }
   return (
     <div className="m-0">
       <div className="text-center sm:my-1 md:my-2 lg:my-2.5">
@@ -153,44 +164,50 @@ const handleProductClick = (data) => {
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto ml-0 lg:ml-10 xl:ml-10 items-center">
-              <Nav.Link href="" className="text-white nav-line">
-                <Link to="/">
-                  <div className="">Home</div>
+              <div href="" className="text-white nav-line nav-link" 
+                         onClick={handleToggle} 
+
+              >
+                <Link to="/" >
+                  <div className="" 
+                 
+                  >Home</div>
                 </Link>
-              </Nav.Link>
-              <Nav.Link href="" className="text-white  nav-line">
+              </div>
+              <div href="" className="text-white  nav-line nav-link" onClick={handleToggle} >
                 <Link to="/mens-perfumes">
                   <div className="">Men's Perfume</div>
                 </Link>
-              </Nav.Link>
-              <Nav.Link href="" className="text-white  nav-line">
+              </div>
+              <div href="" className="text-white  nav-line nav-link" onClick={handleToggle} >
                 <Link to="/womens-perfumes">
                   <div className="">Women's Perfume</div>
                 </Link>
-              </Nav.Link>
-              <Nav.Link href="" className="text-white  nav-line">
+              </div>
+              <div href="" className="text-white  nav-line nav-link" onClick={handleToggle} >
                 <Link to="/perfume-tester-box">
                   <div className="">Tester Box</div>
                 </Link>
-              </Nav.Link>
-              <Nav.Link href="" className="text-white  nav-line">
+              </div>
+              <div href="" className="text-white  nav-line nav-link" onClick={handleToggle} >
                 <Link to="/aboutUs">
                   <div className="">About Us</div>
                 </Link>
-              </Nav.Link>
-              <Nav.Link href="" className="text-white  nav-line">
+              </div>
+              <div href="" className="text-white  nav-line nav-link" onClick={handleToggle} >
                 <Link to="/contactUs">
                   <div className="">Contact Us</div>
                 </Link>
-              </Nav.Link>
-              <div className="relative d-lg-none">
+              </div>
+              <div className="relative d-lg-none mt-3">
                 <input
                   type="search"
                   className=" p-1.5 overflow-hidden  w-56 pr-7 pl-3 rounded-2xl focus:outline-none focus:border-none"
                   placeholder="Search  here..."
                   onChange={(e) => {
-                    setSearch(e.target.value);
-                    setShowDropdown(true); // Show dropdown when typing
+                    const value = e.target.value;
+                    setSearch(value);
+                    setShowDropdown(value.trim().length > 0); // Show dropdown only if search has content
                   }}
                 />
                 <button className="absolute top-1 right-1.5">
@@ -233,88 +250,83 @@ const handleProductClick = (data) => {
           </Navbar.Collapse>
 
           <div className="d-sm-none d-lg-block sm-icon ms-auto ">
-            <div className="flex items-center">
-              <div className="relative ">
-                <input
-                  type="search"
-                  className=" p-1.5 overflow-hidden  w-56 pr-7 pl-3 rounded-2xl focus:outline-none focus:border-none"
-                  placeholder="Search  here..."
-                  onChange={(e) => {
-                    setSearch(e.target.value);
-                    setShowDropdown(true); // Show dropdown when typing
-                  }}
+  <div className="flex items-center">
+    <div className="relative">
+      <input
+        type="search"
+        className="p-1.5 overflow-hidden w-56 pr-7 pl-3 rounded-2xl focus:outline-none focus:border-none"
+        placeholder="Search here..."
+        onChange={(e) => {
+          const value = e.target.value;
+          setSearch(value);
+          setShowDropdown(value.trim().length > 0); // Show dropdown only if search has content
+        }}
+      />
+      <button className="absolute top-1 right-1.5">
+        <i className="fa-solid fa-magnifying-glass text-black fa-lg cursor-pointer" />
+      </button>
+      
+      {showDropdown && (
+        <div className="size-96 z-50 absolute bg-white border mt-1 rounded-xl w-56 max-h-64 overflow-y-auto">
+          {showProducts.map((data) => (
+            <div
+              key={data.id}
+              onClick={() => handleProductClick(data)}
+              className="my-1 mx-1 py-2 border-b"
+            >
+              <div className="flex">
+                <img
+                  className="img p-1 rounded-xl h-20 object-cover"
+                  src={data.img}
+                  alt={data.title}
                 />
-                <button className="absolute top-1 right-1.5">
-                  <i className="fa-solid fa-magnifying-glass  text-black fa-lg cursor-pointer " />
-                </button>
-                {showDropdown  && (
-                <div className="size-96 z-50 absolute bg-white border mt-1 rounded-xl w-56 max-h-64 overflow-y-auto">
-                  {showProducts.map((data) => (
-                    //  <Link to={`/products/${data.id}`} >
-                    <div key={data.id}
-                     onClick={() => handleProductClick(data)
-                      
-                     }
-                    className="my-1 mx-1 py-2 border-b ">
-                      <div className="flex ">
-
-                      <img
-                        className="img p-1   rounded-xl  h-20 object-cover"
-                        src={data.img}
-                        alt={data.title}
-                        />
-                      <div className="pl-1.5  content-center">
-
-                      <p className=" font-semibold">{data.title}</p>
-                      <p className="text-sm seach-category">{data.category}</p>
-                      <p className="text-sm">Rs. {data.price}/-</p>
-                        </div>
-                      </div>
-                    </div>
-                    // </Link>
-                  ))}
-                </div>
-              )}
-
-
-
-              </div>
-
-              <Badge
-                count={cartItems.length}
-                className={cartItems.length > 0 ? "mr-2" : "mr-0"}
-              >
-                <div>
-                  <Link to={"/cart"}>
-                    {/* <ShoppingCartOutlined className="text-white w-full h-full text-3xl m-0"/> */}
-                    <i className="fa-solid fa-cart-shopping text-white fa-lg  mx-2 text-2xl  cursor-pointer" />
-                  </Link>
-                </div>
-              </Badge>
-              <div className="dropdown">
-                <i
-                  onClick={gotoLogin}
-                  className={`fa-solid fa-user text-white fa-lg  cursor-pointer text-2xl z-50`}
-                />
-                <div className="dropdown-content ">
-                  {auth.currentUser ? (
-                    <button
-                      className="bg-white p-2 px-3 text-lg  dropdown-Btn mt-2"
-                      onClick={HandleSignOut}
-                    >
-                      LogOut
-                    </button>
-                  ) : (
-                    <Link to="/login">
-                      <button className="bg-white p-2 px-3 text-lg  dropdown-Btn ">
-                        Login
-                      </button>
-                    </Link>
-                  )}
+                <div className="pl-1.5 content-center">
+                  <p className="font-semibold">{data.title}</p>
+                  <p className="text-sm seach-category">{data.category}</p>
+                  <p className="text-sm">Rs. {data.SalePrice}/-</p>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <Badge
+      count={cartItems.length}
+      className={cartItems.length > 0 ? "mr-2" : "mr-0"}
+    >
+      <div>
+        <Link to={"/cart"}>
+          <i className="fa-solid fa-cart-shopping text-white fa-lg mx-2 text-2xl cursor-pointer" />
+        </Link>
+      </div>
+    </Badge>
+    
+    <div className="dropdown">
+      <i
+        onClick={gotoLogin}
+        className="fa-solid fa-user text-white fa-lg cursor-pointer text-2xl z-50"
+      />
+      <div className="dropdown-content">
+        {auth.currentUser ? (
+          <button
+            className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2"
+            onClick={HandleSignOut}
+          >
+            LogOut
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+              Login
+            </button>
+          </Link>
+        )}
+      </div>
+    </div>
+  </div>
+</div>
         </Container>
       </Navbar>
     </div>

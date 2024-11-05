@@ -6,7 +6,10 @@ import tester2 from "../assets/images/tester2.jpg";
 
 
 export default function ProductCollection() {
-
+  const scrollToTop = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  };
   return (
     <>
       <div className="container mt-24">
@@ -15,7 +18,7 @@ export default function ProductCollection() {
         </div>
         <div>
           <div className="grid grid-cols-1 h-2/3  md:grid-cols-2 lg:grid-cols-3 lg:h-full gap-x-4   m-0 p-0">
-            <Link to="/mens-perfumes">
+            <Link to="/mens-perfumes" onClick={scrollToTop}>
             <div className="f-image1 ">
               <div className="f-large ">
                 <img className="f-img1 hover-img" src={mensPerfume} alt="mens Perfume" />
@@ -29,7 +32,7 @@ export default function ProductCollection() {
               </div>
             </div>
             </Link>
-            <Link to="/womens-perfumes">
+            <Link to="/womens-perfumes" onClick={scrollToTop}>
             <div className="f-image1 ">
               <div className="f-large ">
                 <img className="f-img1 hover-img" src={womensPerfume} alt="womens Perfume" />
@@ -43,7 +46,7 @@ export default function ProductCollection() {
               </div>
             </div>
             </Link>
-            <Link to="/perfume-tester-box">
+            <Link to="/perfume-tester-box" onClick={scrollToTop}>
             <div className="f-image1 ">
               <div className="f-large ">
                 <img className="f-img1 hover-img" src={tester2} alt="tester box" />

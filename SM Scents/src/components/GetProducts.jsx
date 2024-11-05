@@ -35,7 +35,10 @@ function GetProducts() {
       setLoader(false);
     }
   };
-
+  const scrollToTop = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  };
   return (
     <>
       {loader ? (
@@ -51,14 +54,17 @@ function GetProducts() {
             <div className="flex  justify-center items-center">
               <h1 className="text-4xl font-bold my-12 uppercase">Our Perfumes</h1>
               <Button
-                onClick={() => navigate("/products")}
+                onClick={() =>{
+                  navigate("/products")
+                  scrollToTop()
+                }}
                 className="learn-btn ml-4 font-normal transition-all"
               >
                 See All
                 <BsArrowUpRightCircle className=""></BsArrowUpRightCircle>
               </Button>
             </div>
-            <div className="grid grid-cols-2 h-2/3  md:grid-cols-3 lg:grid-cols-5 lg:h-full gap-4">
+            <div className="grid grid-cols-2 h-2/3  md:grid-cols-3 lg:grid-cols-5 lg:h-full gap-4" onClick={scrollToTop}>
               {products?.map((data) => (
             <Badge.Ribbon text="Sale" color="red" key={data.id} className="">
                 <Link to={`/products/${data.id}`} key={data.id}  className="hover:text-black">

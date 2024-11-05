@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from "antd";
-import intro  from '../assets/images/intro.jpg'
-import {Link} from 'react-router-dom'
- 
+import intro from "../assets/images/intro.jpg";
+import { Link } from "react-router-dom";
 
 function Intro() {
-  const image1 =
-    "https://plus.unsplash.com/premium_photo-1673277281977-3614760f01ec?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
+  const scrollToTop = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  };
   return (
     <div className="mt-10  sm:mt-20 lg:mt-28 mb-10  sm:mb-20 lg:mb-28">
       <div className="main ">
@@ -34,12 +34,11 @@ function Intro() {
                 </p>
               </div>
               <div className="mt-3 my-4">
-                <Link to="/aboutUs">
+                <Link to="/aboutUs" onClick={scrollToTop}>
                   <button className="btn  learn-btn transition-all">
                     Learn More..
                   </button>
                 </Link>
-              
               </div>
             </div>
             <div className="right-main img-div col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">

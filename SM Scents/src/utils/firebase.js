@@ -34,9 +34,9 @@ const storage = getStorage(app)
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("user is present")
+    // console.log("user is present")
   } else {
-      console.log("User not exist")
+      // console.log("User not exist")
   }
   
 })

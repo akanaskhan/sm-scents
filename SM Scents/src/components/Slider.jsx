@@ -14,15 +14,15 @@ function Slider() {
           <div className="carousel-item active   ">
             <img
               src={Banner1}
-              className="d-block w-100"
+              className="d-block w-100 "
               alt="..."
             />
           </div>
           <div className="carousel-item">
-            <img src={Image10} className="d-block w-100" alt="..." />
+            <img src={Image10} className="d-block w-full object-cover h-full" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={SliderImage3} className="d-block w-100" alt="..." />
+            <img src={SliderImage3} className="d-block w-full object-cover h-full" alt="..." />
           </div>
         </div>
         <button
