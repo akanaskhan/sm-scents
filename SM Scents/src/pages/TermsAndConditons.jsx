@@ -24,7 +24,7 @@ export default function TermsAndConditions(){
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2 text-black">4. Returns and Refunds</h2>
-        <p>Our return and refund policy applies to all purchases. Please review our <Link to="/return-policy" className="text-blue-500">Return Policy</Link> for more details.</p>
+        <p>Our return and refund policy applies to all purchases. Please review our <Link to="/refund-and-exchange-policy" className="text-blue-500">Return Policy</Link> for more details.</p>
       </section>
 
       <section className="mb-8">
