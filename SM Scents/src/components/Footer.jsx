@@ -172,16 +172,7 @@ export default function Footer() {
             <p className="text-white">
               &copy; Copyright 2024-SM Scents. All Rights Reserved
             </p>
-            <a
-              className="decoration-white "
-              href="https://www.linkedin.com/in/muhammad-anas-khan786/"
-              target="_blank"
-            >
-              <p className="text-white decoration-white">
-                Developed By{" "}
-                <span className=" hover:underline"> Anas Khan</span>
-              </p>
-            </a>
+            
           </div>
         </div>
       </div>

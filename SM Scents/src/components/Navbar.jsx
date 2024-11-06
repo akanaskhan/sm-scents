@@ -13,7 +13,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { CartContext } from "../context/CartContext";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { data } from "autoprefixer";
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo.svg'
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false); // State to track toggle status
@@ -102,12 +102,28 @@ const handleToggle= () =>{
  }
   return (
     <div className="m-0">
-      <div className="text-center sm:my-1 md:my-2 lg:my-2.5">
+        <div className="marquees">
+    <section
+      className="marquee text-sm md:text-sm lg:text-sm tracking-widest font-extrabold text-black"
+      style={{ '--char-count': 60 }}
+    >
+      <div className="marquee--inner">
+        <p>
+          FREE Perfume Box & Spray Tester with every order. FREE DELIVERY ON ORDERS ABOVE RS. 3,500.
+        </p>
+        <p aria-hidden="true">
+          FREE Perfume Box & Spray Tester with every order. FREE DELIVERY ON ORDERS ABOVE RS. 3,500.
+        </p>
+       
+      </div>
+    </section>
+  </div>
+      {/* <div className="text-center sm:my-1 md:my-2 lg:my-2.5">
         <p className="text-xs md:text-sm lg:text-sm tracking-widest font-extrabold text-black">
           FREE Perfume Box & Spray Tester with every order. FREE
           DELIVERY ON ORDERS ABOVE RS. 3,500
         </p>
-      </div>
+      </div> */}
 
       <Navbar expand="lg" className="bg-black " expanded={expanded}>
         <Container>
@@ -132,8 +148,8 @@ const handleToggle= () =>{
             </div>
           </button>
 
-          <Navbar.Brand className="mx-auto w-12 md:w-18 lg:w-16" href="/">
-            <img src={logo} alt="Logo" />
+          <Navbar.Brand className="mx-auto text-white  w-12 md:w-18 lg:w-16" href="/">
+            <img className="text-white" src={logo} alt="Logo" />
           </Navbar.Brand>
 
           <div className="d-lg-none">

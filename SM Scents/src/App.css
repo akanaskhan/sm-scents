@@ -587,6 +587,39 @@ aside{
 .sale-ribbon{
   font-family: poppins !important;
 }
+
+.marquees {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee {
+  --marquee--base-duration: 0.7s; /* Adjust duration for speed */
+  --marquee--duration: calc(var(--marquee--base-duration) * var(--char-count, 600));
+  background: #fff;
+  color: #000;
+}
+
+.marquee--inner {
+  width: max-content;
+  display: flex;
+  animation: marquee var(--marquee--duration) linear  infinite;
+  color: #000;
+  gap: 1rem; /* Adds space between each repetition */
+  text-transform: uppercase;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+
   @media only screen and (min-width: 1600px) {
 
     .amountSection{
