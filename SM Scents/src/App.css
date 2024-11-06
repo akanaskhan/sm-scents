@@ -198,6 +198,10 @@ body{
   .whatsapp{
     background:linear-gradient(45deg, #E5FFCC, #1EBEA5, #00E676, #D0E9EA, #EDF8F5, #ffffff);
   }
+  .facebook{
+    padding-right: 12px;
+    padding-left: 12px;
+  }
   .yt-btn {
     padding: 8px !important;
   }
