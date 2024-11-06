@@ -44,11 +44,11 @@ const AboutUs = () => {
     <div className="about-us-container p-8 max-w-5xl mx-auto">
       <h1 className="text-4xl font-bold text-center mb-8">{data.title}</h1>
       
-      {data.image && (
+      {/* {data.image && (
         <div className="flex justify-center mb-8 h-1/3">
           <img src={data.image} alt="About Us" className="w-full  object-cover rounded-md shadow-md" />
         </div>
-      )}
+      )} */}
       
       <div className="text-lg leading-relaxed text-gray-700">
         {data.sections.map((section, index) => (
