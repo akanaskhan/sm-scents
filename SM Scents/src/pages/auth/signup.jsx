@@ -106,7 +106,7 @@ function SignUp() {
 
   return (
     <div className="flex justify-center lg:my-20 my-14 " >
-      <div className=" p-7  border rounded border-black ">
+      <div className=" p-7   rounded border-black bg-white shadow-2xl drop-shadow-2xl">
         <div className="text-center mb-4">
           <p className="text-black font-extrabold text-3xl underline ">
             SIGN UP
