@@ -9,7 +9,7 @@ export default function ChooseSection() {
   return (
     <>
       <div className="container py-5  rounded">
-        <div className="uppercase text-center text-black text-3xl font-bold">
+        <div className="uppercase text-center text-black text-3xl  md:text-4xl  lg:text-4xl xl:text-4xl xxl:text-4xl font-bold">
           Why Choose Us?
         </div>
         <div className="grid grid-cols-1 h-2/3  md:grid-cols-3 lg:grid-cols-3 lg:h-full mt-6 lg:mt-10 gap-4">

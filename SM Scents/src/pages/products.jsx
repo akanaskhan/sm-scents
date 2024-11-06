@@ -57,11 +57,12 @@ function AllProducts() {
             <div className="flex justify-center my-4 text-center items-center">
               <h1 className="text-4xl font-black text-black underline">All Perfumes</h1>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-8 " onClick={scrollToTop}>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-8 " >
               {products?.map((data) => (
                 <div
                   className="border rounded-md overflow-hidden"
                   key={data?.id}
+                  onClick={scrollToTop}
                 >
                   {loader ? (
                     <div className="flex h-screen justify-center items-center">

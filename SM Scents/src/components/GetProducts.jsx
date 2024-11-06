@@ -52,7 +52,7 @@ function GetProducts() {
         <div className="container mx-auto">
           <div className="mb-1">
             <div className="flex  justify-center items-center">
-              <h1 className="text-4xl font-bold my-12 uppercase">Our Perfumes</h1>
+              <h1 className="text-3xl  md:text-4xl  lg:text-4xl xl:text-4xl xxl:text-4xl font-bold my-12 uppercase">Our Perfumes</h1>
               <Button
                 onClick={() =>{
                   navigate("/products")
@@ -64,7 +64,7 @@ function GetProducts() {
                 <BsArrowUpRightCircle className=""></BsArrowUpRightCircle>
               </Button>
             </div>
-            <div className="grid grid-cols-2 h-2/3  md:grid-cols-3 lg:grid-cols-5 lg:h-full gap-4" onClick={scrollToTop}>
+            <div className="grid grid-cols-2 h-2/3   md:grid-cols-3 lg:grid-cols-5 lg:h-full gap-4" onClick={scrollToTop}>
               {products?.map((data) => (
             <Badge.Ribbon text="Sale" color="red" key={data.id} className="">
                 <Link to={`/products/${data.id}`} key={data.id}  className="hover:text-black">
@@ -82,7 +82,7 @@ function GetProducts() {
                       <div className="flex justify-between flex-col mb-2">
                         <h1 className="my-1 line-clamp-1">{data?.category}</h1>
                         <h1 className="text-gray-600 hide-text">{data?.ProductCategory}</h1>
-                        <div className="flex gap-2 text-lg">
+                        <div className="flex gap-2 front-page-price  text-lg">
                         <h1 className="font-bold mt-2 text-gray-600"><del>Rs. {data?.price}</del></h1>
                         
                         <h1 className="font-bold mt-2">Rs. {data?.SalePrice}</h1>

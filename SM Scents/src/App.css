@@ -655,5 +655,8 @@ aside{
     .f-col{
       text-align: start;
     }
+    .front-page-price{
+      justify-content: space-between !important;
+    }
    
 }

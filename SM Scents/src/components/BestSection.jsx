@@ -1,4 +1,10 @@
+import { Link } from "react-router-dom";
+
 export default function BestSection() {
+  const scrollToTop = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  };
   return (
     <div className="container flex justify-center my-12">
       <div className="text-center w-3/4 flex flex-col gap-5">
@@ -7,12 +13,20 @@ export default function BestSection() {
             Best Perfumes for Men
           </div>
           <div>
-            At SM Scents, Bad Boy is crafted for the daring and the bold. This
-            powerful fragrance blends vibrant notes that exude confidence and
-            allure, perfect for those who live life on their own terms. With its
-            dynamic and captivating profile, Bad Boy is for anyone who isn’t
-            afraid to stand out. Embrace your inner strength and leave a lasting
-            impression—all without breaking the bank.
+            At SM Scents,
+            <Link
+              to="/products/1d0XrHYaNh4PD5VSsQBs"
+              className="font-semibold mx-1 underline"
+              onClick={scrollToTop}
+            >
+              Bad Boy
+            </Link>
+            is crafted for the daring and the bold. This powerful fragrance
+            blends vibrant notes that exude confidence and allure, perfect for
+            those who live life on their own terms. With its dynamic and
+            captivating profile, Bad Boy is for anyone who isn’t afraid to stand
+            out. Embrace your inner strength and leave a lasting impression—all
+            without breaking the bank.
           </div>
         </div>
         <div>
@@ -20,16 +34,45 @@ export default function BestSection() {
             Best Perfumes For Women
           </div>
           <div>
-            At SM Scents, we bring you fragrances inspired by two iconic
-            scents—Gucci Bloom and Bombshell. Our Gucci Bloom-inspired fragrance
-            is a tribute to nature’s beauty, capturing the essence of a lush
-            garden with notes of tuberose, jasmine, and honeysuckle, perfect for
-            those who love fresh, feminine scents. Meanwhile, our
-            Bombshell-inspired fragrance is a burst of energy and charm,
-            blending exotic passion fruit, sparkling pineapple, and blooming
-            peony for a playful yet sophisticated aroma. Discover the beauty of
-            these captivating fragrances, designed to let you radiate confidence
-            and grace.
+            At SM Scents, we bring you fragrances inspired by two iconic scents
+            <Link
+              to="/products/BGpwwskFxArpV9DAoMVV"
+              className="font-semibold mx-1 underline"
+              onClick={scrollToTop}
+            >
+              Gucci Bloom
+            </Link>
+            and
+            <Link
+              to="/products/LH3UaMJ8vI0xWICCtH1i"
+              className="font-semibold mx-1 underline"
+              onClick={scrollToTop}
+            >
+              Bombshell
+            </Link>
+            . Our
+            <Link
+              to="/products/BGpwwskFxArpV9DAoMVV"
+              className="font-semibold mx-1 underline"
+              onClick={scrollToTop}
+            >
+              Gucci Bloom
+            </Link>
+            inspired fragrance is a tribute to nature’s beauty, capturing the
+            essence of a lush garden with notes of tuberose, jasmine, and
+            honeysuckle, perfect for those who love fresh, feminine scents.
+            Meanwhile, our
+            <Link
+              to="/products/LH3UaMJ8vI0xWICCtH1i"
+              className="font-semibold mx-1 underline"
+              onClick={scrollToTop}
+            >
+              Bombshell
+            </Link>
+            inspired fragrance is a burst of energy and charm, blending exotic
+            passion fruit, sparkling pineapple, and blooming peony for a playful
+            yet sophisticated aroma. Discover the beauty of these captivating
+            fragrances, designed to let you radiate confidence and grace.
           </div>
         </div>
         <div>
@@ -40,11 +83,26 @@ export default function BestSection() {
             SM Scents has a collection of fragrances that will take you on a
             journey through the changing seasons. Like the leaves on a tree, our
             scents transform and evolve as the year goes by. In the heat of
-            Summer, our scents are like a "Janan" on a sunny day. They are
-            fresh, vibrant, and invigorating, like a splash of water on your
-            face. As Autumn rolls in, our scents become warm and comforting,
-            like a "Exclusive" on a chilly day. They evoke the season's rich
-            colors with cinnamon, vanilla, and nutmeg notes.
+            Summer, our scents are like a
+            <Link
+              to="/products/NEOIvd2t8LxVXCuRiYrN"
+              className="font-semibold mx-1 underline"
+              onClick={scrollToTop}
+            >
+              "Janan"
+            </Link>
+            on a sunny day. They are fresh, vibrant, and invigorating, like a
+            splash of water on your face. As Autumn rolls in, our scents become
+            warm and comforting, like a
+            <Link
+              to="/products/RBvzifiI8Hp68DB2LGP6"
+              className="font-semibold mx-1 underline"
+              onClick={scrollToTop}
+            >
+              "Exclusive"
+            </Link>
+            on a chilly day. They evoke the season's rich colors with cinnamon,
+            vanilla, and nutmeg notes.
           </div>
         </div>
         <div>
