@@ -104,7 +104,7 @@ const handleToggle= () =>{
     <div className="m-0">
         <div className="marquees">
     <section
-      className="marquee text-sm md:text-sm lg:text-sm tracking-widest font-extrabold text-black"
+      className="marquee text-sm md:text-sm lg:text-sm tracking-widest font-bold text-black"
     
     >
       <div className="marquee--inner">
