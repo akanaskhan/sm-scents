@@ -135,7 +135,7 @@ export default function Footer() {
                 <div className="s-icons m-1 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-150">
                   <a className="" href="https://www.facebook.com/officialsmscents" target="_blank">
                     <i
-                      className="fa-brands fa-facebook-f s-btn px-2.5 text-xl"
+                      className="fa-brands fa-facebook-f s-btn facebook  text-xl"
                       style={{ color: "#316FF6" }}
                     />
                   </a>
