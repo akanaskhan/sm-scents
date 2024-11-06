@@ -594,9 +594,9 @@ aside{
 }
 
 .marquee {
-  --marquee--base-duration: 0.7s; /* Adjust duration for speed */
-  --marquee--duration: calc(var(--marquee--base-duration) * var(--char-count, 600));
-  background: #fff;
+  --marquee--base-duration: 90s; /* Sets the scroll speed */
+  --marquee--duration: calc(var(--marquee--base-duration) * (60 / var(--char-count, 60)));
+   background: #fff;
   color: #000;
 }
 
@@ -611,7 +611,7 @@ aside{
 
 @keyframes marquee {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
     transform: translateX(-100%);
@@ -655,4 +655,5 @@ aside{
     .f-col{
       text-align: start;
     }
+   
 }

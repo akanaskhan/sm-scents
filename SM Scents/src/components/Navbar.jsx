@@ -105,10 +105,19 @@ const handleToggle= () =>{
         <div className="marquees">
     <section
       className="marquee text-sm md:text-sm lg:text-sm tracking-widest font-extrabold text-black"
-      style={{ '--char-count': 60 }}
+    
     >
       <div className="marquee--inner">
-        <p>
+        <p >
+          FREE Perfume Box & Spray Tester with every order. FREE DELIVERY ON ORDERS ABOVE RS. 3,500.
+        </p>
+        <p aria-hidden="true">
+          FREE Perfume Box & Spray Tester with every order. FREE DELIVERY ON ORDERS ABOVE RS. 3,500.
+        </p>
+        <p aria-hidden="true">
+          FREE Perfume Box & Spray Tester with every order. FREE DELIVERY ON ORDERS ABOVE RS. 3,500.
+        </p>
+        <p aria-hidden="true">
           FREE Perfume Box & Spray Tester with every order. FREE DELIVERY ON ORDERS ABOVE RS. 3,500.
         </p>
         <p aria-hidden="true">
