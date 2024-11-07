@@ -34,7 +34,7 @@ function Intro() {
                 </p>
               </div>
               <div className="mt-3 my-4">
-                <Link to="/aboutUs" onClick={scrollToTop}>
+                <Link to="/about-us" onClick={scrollToTop}>
                   <button className="btn  learn-btn transition-all">
                     Learn More..
                   </button>
