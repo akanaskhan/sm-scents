@@ -104,7 +104,7 @@ export default function AddProduct() {
               errors={errors}
             />
             <CustomInput
-              placeholder={"Product category"}
+              placeholder={"Product top notes"}
               obj={{ ...register("ProductCategory", { required: true }) }}
               errorMsg={"Product Category is required"}
               formKey={"ProductCategory"}
@@ -119,7 +119,7 @@ export default function AddProduct() {
             />
             <div className="mx-4">
               <select
-                className="border mt-2 w-full border-purple-600 lg:w-2/3 mx-auto p-2 rounded-md"
+                className="border mt-2 w-full border-purple-600 lg:w-2/3 mx-auto p-2 px-3 rounded-md"
                 {...register("category", { required: true })}
               >
                 
@@ -135,7 +135,7 @@ export default function AddProduct() {
             </div>
             <div className="mx-4">
               <select
-                className="border mt-2 w-full border-purple-600 lg:w-2/3 mx-auto p-2 rounded-md"
+                className="border mt-2 w-full border-purple-600 lg:w-2/3 mx-auto p-2 px-3 rounded-md"
                 {...register("ML", { required: true })}
               >
                 <option value="">Select ML</option>
@@ -187,7 +187,7 @@ export default function AddProduct() {
                 className="absolute mt-3 cursor-pointer"
               >
                 <i className="fa-solid fa-file-arrow-up text-md mr-2" />
-               Upload Image Here
+              Click here to upload image 
               </label>
             </div>
             <button

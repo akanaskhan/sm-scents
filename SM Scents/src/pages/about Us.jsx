@@ -42,7 +42,7 @@ const AboutUs = () => {
 
   return (
     <div className="about-us-container p-8 max-w-5xl mx-auto">
-      <h1 className="text-4xl font-bold text-center mb-8">{data.title}</h1>
+      <h1 className="text-4xl font-bold text-center mb-8 text-black">{data.title}</h1>
       
       {/* {data.image && (
         <div className="flex justify-center mb-8 h-1/3">
@@ -53,7 +53,7 @@ const AboutUs = () => {
       <div className="text-lg leading-relaxed text-gray-700">
         {data.sections.map((section, index) => (
           <div key={index} className="mb-8">
-            <h2 className="text-2xl font-semibold mb-2">{section.title}</h2>
+            <h2 className="text-2xl font-semibold mb-2 text-black">{section.title}</h2>
             <p>{section.content}</p>
           </div>
         ))}

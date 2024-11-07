@@ -17,6 +17,8 @@ import { CiDeliveryTruck } from 'react-icons/ci';
 import { ImCancelCircle } from 'react-icons/im';
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
+import { FcFeedback } from 'react-icons/fc';
+import { MdOutlineFeedback } from 'react-icons/md';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -34,18 +36,18 @@ const items = [
   getItem('All Product', '2', <FileOutlined />, null, '/products'), // Option 1 navigates to /option1
   getItem('Orders', '3', <ShoppingCartOutlined />, null, '/orders'),
   getItem('Cancelled', '4', <ImCancelCircle />, null, '/deleted-orders'),
-  // getItem('Add Testers', '4', <FileOutlined />, null,'/AddTesters' ),
   // getItem('Orders', 'sub1', <ShoppingCartOutlined />, [
-  //   getItem('Confirmed', '5', null, null, '/user/tom'),
-  //   getItem('Cancelled', '6', null, null, '/deleted-orders'),
-  //   getItem('Ready to ship', '7', null, null, '/user/alex'),
-  // ]),
-  // getItem('Team', 'sub2', <TeamOutlined />, [
-  //   getItem('Team 1', '8', null, null, '/team/team1'),
-  //   getItem('Team 2', '9', null, null, '/team/team2'),
-  // ]),
-  getItem('Deliverd Orders', '10', <CiDeliveryTruck />, null, '/delivered-orders'),
-  getItem('Log Out', '11', <LoginOutlined />, null, '/logout'),
+    //   getItem('Confirmed', '5', null, null, '/user/tom'),
+    //   getItem('Cancelled', '6', null, null, '/deleted-orders'),
+    //   getItem('Ready to ship', '7', null, null, '/user/alex'),
+    // ]),
+    // getItem('Team', 'sub2', <TeamOutlined />, [
+      //   getItem('Team 1', '8', null, null, '/team/team1'),
+      //   getItem('Team 2', '9', null, null, '/team/team2'),
+      // ]),
+      getItem('Deliverd Orders', '5', <CiDeliveryTruck />, null, '/delivered-orders'),
+      getItem('Feedbacks', '6', <MdOutlineFeedback />, null,'/feedbacks' ),
+  getItem('Back to Admin Panel', '11', <LoginOutlined />, null, '/admin'),
 ];
 
 const SideMenu = () => {
@@ -68,7 +70,7 @@ const SideMenu = () => {
 
     <>
     <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} className='h-auto bg-black' >
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'sticky' }}>
+      <div className='bg-black' style={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'sticky' }}>
         <Menu
           theme="dark"
           defaultSelectedKeys={['1']}
@@ -77,9 +79,9 @@ const SideMenu = () => {
           style={{ flex: 1 }}
         />
        
-    <Button className="btn bg-white text-black mb-96  mt-0 pt-0"
+    {/* <Button className="btn bg-black text-white mb-96  mt-0 pt-0"
             onClick={HandleSignOut}
-            >Log Out</Button>
+            >Log Out</Button> */}
       </div>
     </Sider>
             </>

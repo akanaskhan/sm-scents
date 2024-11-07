@@ -93,13 +93,18 @@ const scrollToTop = () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 };
-const handleToggle= () =>{
+const handleToggle = () => {
+  // Check if the screen width is below large (e.g., 1024px for large screens)
+  if (window.innerWidth < 1024) {
+    toggleIcon(setIsOpen4);
+    setExpanded(expanded ? false : true);
+    
+    // Scroll to top for Safari, Chrome, Firefox, IE, and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  }
+};
 
-  toggleIcon(setIsOpen4)
-  setExpanded(expanded ? false : true)
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
- }
   return (
     <div className="m-0">
         <div className="marquees">
@@ -215,12 +220,12 @@ const handleToggle= () =>{
                 </Link>
               </div>
               <div href="" className="text-white  nav-line nav-link" onClick={handleToggle} >
-                <Link to="/aboutUs">
+                <Link to="/about-us">
                   <div className="">About Us</div>
                 </Link>
               </div>
               <div href="" className="text-white  nav-line nav-link" onClick={handleToggle} >
-                <Link to="/contactUs">
+                <Link to="/contact-us">
                   <div className="">Contact Us</div>
                 </Link>
               </div>

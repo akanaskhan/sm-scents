@@ -68,7 +68,6 @@ function SignUp() {
           const  userCollection =  collection(db, "users");
         const obj = {
           email: email,
-          password: password,
          
           displayName: Username,
 

@@ -31,6 +31,7 @@ import PrivacyPolicy from "./pages/privacyPolicy.jsx";
 import { Tester } from "./pages/tester.jsx";
 import TermsAndConditions from "./pages/TermsAndConditons.jsx";
 import RefundExchangePolicy from "./pages/RefundAndExchangePolicy.jsx";
+import ContactFeedbacks from "./pages/ContactFeedbacks.jsx";
 
 function AppRouter() {
   const { user } = useContext(AuthContext);
@@ -55,8 +56,8 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/perfume-tester-box" element={<Tester />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<LogIn />} />
@@ -104,6 +105,17 @@ function AppRouter() {
           auth.currentUser?.uid === import.meta.env.VITE_USER_UID ||
           auth.currentUser?.uid === import.meta.env.VITE_USER2_UID ? (
             <DeletedOrders />
+          ) : (
+            <Navigate to="/notfound" />
+          )
+        }
+        />
+        <Route path="/feedbacks" element=
+   
+        {
+          auth.currentUser?.uid === import.meta.env.VITE_USER_UID ||
+          auth.currentUser?.uid === import.meta.env.VITE_USER2_UID ? (
+            <ContactFeedbacks />
           ) : (
             <Navigate to="/notfound" />
           )
