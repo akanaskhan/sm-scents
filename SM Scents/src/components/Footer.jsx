@@ -80,7 +80,7 @@ export default function Footer() {
             <hr className="text-white my-3 d-lg-none border-3" />
           </div>
 
-          <div className="f-col3  col-12 col-sm-6 col-md-6 col-lg-6 col-xl-2 col-xxl-3 ">
+          <div className="f-col3  col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 ">
             <ul className="f-list ">
               {/* <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
                 <form action="">
@@ -128,7 +128,7 @@ export default function Footer() {
             </ul>
             <hr className="text-white my-3 d-lg-none border-3" />
           </div>
-          <div className="f-col4 text-center items-center col-12  col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-2">
+          <div className="f-col4 text-center items-center col-12  col-sm-6 col-md-6 col-lg-6 col-xl-2 col-xxl-2">
             <p className="follow">Follow Us</p>
             <div className="items-center">
               <div className="flex justify-center">

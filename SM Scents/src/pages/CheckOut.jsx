@@ -10,11 +10,13 @@ import { WiDegrees } from "react-icons/wi";
 import { BiCircle } from "react-icons/bi";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { AuthContext } from "../context/AuthContext";
 dayjs.extend(relativeTime);
 
 function Checkout() {
   const { cartItems, removeItemFromCart, addItemToCart, lessQuantityFromCart } =
     useContext(CartContext);
+    const {user} = useContext(AuthContext)
   const navigate = useNavigate();
   const totalAmount = cartItems.reduce(
     (total, obj) => total + obj.quantity * obj.SalePrice,
@@ -42,8 +44,10 @@ function Checkout() {
     const obj = {
       ...data,
       ...cartItems,
+      TotalAmount: totalAmountWithSipping,
+      Quantity: totalQuantity,
       createdAt: serverTimestamp(),
-      createdBy: auth.currentUser.uid,
+      OrderBy: auth.currentUser.uid,
       status: "Booked",
     };
     addDoc(OderRef, obj).then(() => {
@@ -72,6 +76,7 @@ function Checkout() {
               </div>
               <CustomInput
                 placeholder={"Email"}
+                value={auth.currentUser.email}
                 obj={{
                   ...register("Email", { required: true, maxLength: 30 }),
                 }}
@@ -315,6 +320,7 @@ const CustomInput = ({
   type,
   disabled,
   className,
+  value,
 }) => {
   return (
     <div className="flex flex-col ">
@@ -328,6 +334,7 @@ const CustomInput = ({
         disabled={disabled}
         type={type ? type : "text"}
         {...obj}
+        value={value}
       />
       {errors[formKey] && (
         <span className="text-sm mb-1 text-red-500">{errorMsg}</span>
