@@ -25,7 +25,7 @@ export default function CartContextProvider({ children }) {
     }
   }, [cartItems, user]);
 
- 
+
 
   function addItemToCart(product) {
     const arr = cartItems;
