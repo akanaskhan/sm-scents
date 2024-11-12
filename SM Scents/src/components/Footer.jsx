@@ -66,13 +66,13 @@ export default function Footer() {
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
             
-                <Link to="/aboutUs" className="nav-link text-white" onClick={scrollToTop}>
+                <Link to="/about-us" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">About Us</div>
                    </Link>
               </li>
               <li className="footer-item flex justify-start md:justify-center lg:justify-center xl:justify-center">
               
-                <Link to="/contactUs" className="nav-link text-white" onClick={scrollToTop}>
+                <Link to="/contact-us" className="nav-link text-white" onClick={scrollToTop}>
                   <div className="nav-line">Contact Us</div>
                    </Link>
               </li>
