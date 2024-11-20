@@ -14,7 +14,7 @@ import { CartContext } from "../context/CartContext";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { data } from "autoprefixer";
 import logo from '../assets/images/logo.svg'
-
+import {  ConfigProvider, Flex, Popover } from 'antd';
 function NavBar() {
   const [expanded, setExpanded] = useState(false); // State to track toggle status
   const [isOpen1, setIsOpen1] = useState(false);
@@ -25,10 +25,10 @@ function NavBar() {
   const toggleIcon = (setState) => {
     setState((prevState) => !prevState);
   };
-
+  
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-
+  
 
   const { cartItems } = useContext(CartContext);
   const addProduct = () => {
@@ -49,12 +49,37 @@ function NavBar() {
       .catch((error) => {
         console.log("signout error", error);
       });
-  };
-
-  const gotoLogin = () => {
-    navigate("/login");
-  };
-
+    };
+    
+    const gotoLogin = () => {
+      navigate("/login");
+    };
+    
+    
+      const text = <span>Title</span>;
+    const content = (
+      <div className="flex flex-col">
+       {auth.currentUser ? (
+              <button
+                className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2"
+                onClick={HandleSignOut}
+              >
+                LogOut
+              </button>
+            ) : (
+              <Link to="/login">
+                <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+                  Login
+                </button>
+              </Link>
+            )}
+             <Link to="/user-orders">
+                <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+                  Your Orders
+                </button>
+              </Link>
+      </div>
+    );
   const [hover, setHover] = useState();
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState("")
@@ -183,11 +208,29 @@ const handleToggle = () => {
                 className={`fa-solid fa-user text-white fa-lg  cursor-pointer`}
               />
               <div className="dropdown-content ">
-                <Link to="/login">
-                  <button className="bg-white p-2 px-3 text-lg  dropdown-Btn ">
-                    Login
-                  </button>
-                </Link>
+               
+
+
+                  {auth.currentUser ? (
+          <button
+            className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2"
+            onClick={HandleSignOut}
+          >
+            LogOut
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+              Login
+            </button>
+          </Link>
+        )}
+         <Link to="/user-orders">
+            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+              Your Orders
+            </button>
+          </Link>
+              
               </div>
             </div>
           </div>
@@ -332,13 +375,20 @@ const handleToggle = () => {
         </Link>
       </div>
     </Badge>
-    
+    {/* <ConfigProvider>
+    <Popover placement="bottomRight" content={content}>
+          <Button className="bg-transparent border-none m-0 px-2 text-lg"><i
+        onClick={gotoLogin}
+        className="fa-solid fa-user text-white fa-lg cursor-pointer  z-50"
+      /></Button>
+        </Popover>
+     </ConfigProvider> */}
     <div className="dropdown">
       <i
         onClick={gotoLogin}
         className="fa-solid fa-user text-white fa-lg cursor-pointer text-2xl z-50"
       />
-      <div className="dropdown-content">
+      <div className="dropdown-content bg-white rounded border border-black">
         {auth.currentUser ? (
           <button
             className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2"
@@ -353,6 +403,11 @@ const handleToggle = () => {
             </button>
           </Link>
         )}
+         <Link to="/user-orders">
+            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+              Your Orders
+            </button>
+          </Link>
       </div>
     </div>
   </div>

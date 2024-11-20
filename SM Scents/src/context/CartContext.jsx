@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export const CartContext = createContext();
 
 export default function CartContextProvider({ children }) {
-  const { user } = useContext(AuthContext); // get user info
+  const { user } = useContext(AuthContext); 
   const [cartItems, setCartItems] = useState([]);
   const [loader, setLoader] = useState(false);
 

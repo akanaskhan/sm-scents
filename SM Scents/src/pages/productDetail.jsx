@@ -57,12 +57,13 @@ const ProductDetail = () => {
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
-        <div className="lg:w-4/5 mx-auto flex flex-wrap lg:flex-row">
-         <div className="lg:w-1/2  w-full ">
+        <div className="lg:w-4/5 w-full  mx-auto flex flex-wrap lg:flex-row">
+         <div className="lg:w-1/2  w-full h-full ">
 
           <Image
             alt={product.title}
-            className="lg:w-1/2  w-full  h-64 object-cover object-center rounded"
+            style={{width: "100%"}}
+            className="lg:w-1/2 md:w-full md:h-full lg:h-full w-full  h-64 object-cover object-center rounded"
             src={product?.img}
             />
             </div>
