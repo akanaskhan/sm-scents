@@ -7,7 +7,7 @@ import SignOutContextProvider from "./context/SignOut.jsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import CartContextProvider from "./context/CartContext.jsx";
 import { BrowserRouter, useNavigate } from "react-router-dom";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +18,7 @@ createRoot(document.getElementById("root")).render(
       <CartContextProvider>
         <SignOutContextProvider>
             <AppRouter />
+            <SpeedInsights/>
         </SignOutContextProvider>
       </CartContextProvider>
          
