@@ -26,7 +26,7 @@ function Cart() {
 
       <div className="flex  gap-3 lg:gap-5 mb-5 mt-3 ">
         <div className="flex-grow flex flex-col rounded border p-2.5 md:p-3  lg:p-4 xl:p-4 justify-center items-center     text-center shadow">
-          <h1 className="">Total Quantity</h1>
+          <h1 className="">Total Qty</h1>
           <h1 className="font-semibold font-mono mt-2 text-md md:text-xl lg:text-3xl xl:text-3xl text-center">
             {totalQuantity}
           </h1>
@@ -42,8 +42,10 @@ function Cart() {
           to="/checkout"
           className="flex-grow flex  bg-gray-100 rounded  border p-2.5 md:p-3  lg:p-4 xl:p-4 justify-center items-center scale-100  hover:bg-black hover:text-white transition-all text-center shadow"
         >
-          <div className="text-center">
-            <h1>Checkout <BsArrowUpRightCircle className=" p-0 ml-1"></BsArrowUpRightCircle></h1>
+          <div className="text-center flex">
+            <h1 className="">Checkout
+            </h1>
+               <BsArrowUpRightCircle className=" p-0 ml-1"></BsArrowUpRightCircle>
             {/* <h1 className="flex items-center">to proceed  <BsArrowUpRightCircle className=" p-0 ml-1"></BsArrowUpRightCircle></h1> */}
           </div>
         </Link>
