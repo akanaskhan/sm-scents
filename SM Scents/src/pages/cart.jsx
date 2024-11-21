@@ -25,22 +25,22 @@ function Cart() {
       </div>
 
       <div className="flex  gap-3 lg:gap-5 mb-5 mt-3 ">
-        <div className="flex-grow flex flex-col rounded border p-4 justify-center items-center     text-center shadow">
+        <div className="flex-grow flex flex-col rounded border p-2.5 md:p-3  lg:p-4 xl:p-4 justify-center items-center     text-center shadow">
           <h1 className="">Total Quantity</h1>
-          <h1 className="font-semibold font-mono mt-2 text-lg md:text-xl lg:text-3xl xl:text-3xl text-center">
+          <h1 className="font-semibold font-mono mt-2 text-md md:text-xl lg:text-3xl xl:text-3xl text-center">
             {totalQuantity}
           </h1>
         </div>
-        <div className="flex-grow flex flex-col rounded border p-4 justify-center items-center  text-center shadow">
+        <div className="flex-grow flex flex-col rounded border p-2.5 md:p-3  lg:p-4 xl:p-4 justify-center items-center  text-center shadow">
           <h1>Total Amount</h1>
-          <h1 className="font-semibold font-mono mt-2 text-lg md:text-xl lg:text-3xl xl:text-3xl text-center">
+          <h1 className="font-semibold font-mono mt-2 text-md md:text-xl lg:text-3xl xl:text-3xl text-center">
             Rs {Math.round(totalAmount)}/-
           </h1>
         </div>
 
         <Link
           to="/checkout"
-          className="flex-grow flex  bg-gray-100 rounded  border p-4 justify-center items-center scale-100  hover:bg-black hover:text-white transition-all text-center shadow"
+          className="flex-grow flex  bg-gray-100 rounded  border p-2.5 md:p-3  lg:p-4 xl:p-4 justify-center items-center scale-100  hover:bg-black hover:text-white transition-all text-center shadow"
         >
           <div className="text-center">
             <h1>Checkout</h1>
