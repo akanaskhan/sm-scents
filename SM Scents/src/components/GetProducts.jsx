@@ -51,14 +51,14 @@ function GetProducts() {
       ) : (
         <div className="container mx-auto">
           <div className="mb-1">
-            <div className="flex  justify-center items-center">
-              <h1 className="text-3xl  md:text-4xl  lg:text-4xl xl:text-4xl xxl:text-4xl font-bold my-12 uppercase">Our Perfumes</h1>
+            <div className="flex   justify-center items-center">
+              <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold my-12 uppercase">Our Perfumes</h1>
               <Button
                 onClick={() =>{
                   navigate("/products")
                   scrollToTop()
                 }}
-                className="learn-btn ml-4 font-normal transition-all"
+                className="bg-black border-none p-1 py-1  scale-100 hover:scale-105 text-white  ml-4  transition-all text-xs  md:text-sm lg:text-sm xl:text-sm"
               >
                 See All
                 <BsArrowUpRightCircle className=""></BsArrowUpRightCircle>

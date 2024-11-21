@@ -32,6 +32,7 @@ import { Tester } from "./pages/tester.jsx";
 import TermsAndConditions from "./pages/TermsAndConditons.jsx";
 import RefundExchangePolicy from "./pages/RefundAndExchangePolicy.jsx";
 import ContactFeedbacks from "./pages/ContactFeedbacks.jsx";
+import UserOrders from "./pages/UserOrders.jsx";
 
 function AppRouter() {
   const { user } = useContext(AuthContext);
@@ -121,6 +122,7 @@ function AppRouter() {
           )
         }
         />
+        <Route path="/user-orders" element={<UserOrders />} />
         <Route path="/mens-perfumes" element={<MalePerfumes />} />
         <Route path="/womens-perfumes" element={<WomensPerfumes />} />
         <Route path="/checkout" element={handleCheckout()} />

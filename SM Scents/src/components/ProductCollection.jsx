@@ -13,7 +13,7 @@ export default function ProductCollection() {
   return (
     <>
       <div className="container mt-24">
-        <div className="text-3xl  md:text-4xl  lg:text-4xl xl:text-4xl xxl:text-4xl font-bold mb-4  text-black text-center">
+        <div className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold mb-4  text-black text-center">
           OUR PRODUCT COLLECTIONS
         </div>
         <div>

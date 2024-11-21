@@ -60,24 +60,26 @@ function NavBar() {
     const content = (
       <div className="flex flex-col">
        {auth.currentUser ? (
+        <>
+             <Link to="/user-orders" className="bg-white p-2 px-3 text-lg dropdown-Btn border border-gray-900">
+                <button >
+                  Your Orders
+                </button>
+              </Link>
               <button
-                className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2"
+                className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2 border border-gray-900"
                 onClick={HandleSignOut}
-              >
-                LogOut
+                >
+                Log Out
               </button>
+                </>
             ) : (
               <Link to="/login">
-                <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+                <button className="bg-white p-2 px-3 text-lg dropdown-Btn border border-gray-900">
                   Login
                 </button>
               </Link>
             )}
-             <Link to="/user-orders">
-                <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
-                  Your Orders
-                </button>
-              </Link>
       </div>
     );
   const [hover, setHover] = useState();
@@ -202,9 +204,17 @@ const handleToggle = () => {
               </Badge>
             </Link>
 
-            <div className="dropdown">
+
+            <ConfigProvider>
+    <Popover placement="bottomRight" content={content}>
+          <Button className="bg-transparent border-none m-0 px-2 text-lg"><i
+      
+        className="fa-solid fa-user text-white text-md  cursor-pointer  z-50"
+      /></Button>
+        </Popover>
+     </ConfigProvider>
+            {/* <div className="dropdown">
               <i
-                onClick={gotoLogin}
                 className={`fa-solid fa-user text-white fa-lg  cursor-pointer`}
               />
               <div className="dropdown-content ">
@@ -232,7 +242,7 @@ const handleToggle = () => {
           </Link>
               
               </div>
-            </div>
+            </div> */}
           </div>
 
           <Navbar.Collapse id="basic-navbar-nav">
@@ -375,41 +385,42 @@ const handleToggle = () => {
         </Link>
       </div>
     </Badge>
-    {/* <ConfigProvider>
+    <ConfigProvider>
     <Popover placement="bottomRight" content={content}>
           <Button className="bg-transparent border-none m-0 px-2 text-lg"><i
-        onClick={gotoLogin}
-        className="fa-solid fa-user text-white fa-lg cursor-pointer  z-50"
+      
+        className="fa-solid fa-user text-white text-md  cursor-pointer  z-50"
       /></Button>
         </Popover>
-     </ConfigProvider> */}
-    <div className="dropdown">
+     </ConfigProvider>
+    {/* <div className="dropdown w-auto">
       <i
-        onClick={gotoLogin}
         className="fa-solid fa-user text-white fa-lg cursor-pointer text-2xl z-50"
       />
-      <div className="dropdown-content bg-white rounded border border-black">
+      <div className="dropdown-content bg-white rounded  w-auto p-2 ">
         {auth.currentUser ? (
+          <>
+         <Link to="/user-orders" className="bg-slate-100 hover:bg-slate-200  px-3 text-lg  w-full rounded  border border-gray-800 ">
+            <button >
+              Your Orders
+            </button>
+          </Link>
           <button
-            className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2"
+            className="bg-slate-100 hover:bg-slate-200  px-3 text-lg  py-1 w-full rounded  border border-gray-800"
             onClick={HandleSignOut}
-          >
+            >
             LogOut
           </button>
+            </>
         ) : (
           <Link to="/login">
-            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
+            <button className="bg-slate-100 hover:bg-slate-200  px-3 text-lg py-1 rounded w-full    border border-gray-800">
               Login
             </button>
           </Link>
         )}
-         <Link to="/user-orders">
-            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
-              Your Orders
-            </button>
-          </Link>
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
         </Container>
