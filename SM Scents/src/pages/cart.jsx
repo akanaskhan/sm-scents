@@ -43,8 +43,8 @@ function Cart() {
           className="flex-grow flex  bg-gray-100 rounded  border p-2.5 md:p-3  lg:p-4 xl:p-4 justify-center items-center scale-100  hover:bg-black hover:text-white transition-all text-center shadow"
         >
           <div className="text-center">
-            <h1>Checkout</h1>
-            <h1 className="flex items-center">to proceed  <BsArrowUpRightCircle className=" p-0 ml-1"></BsArrowUpRightCircle></h1>
+            <h1>Checkout <BsArrowUpRightCircle className=" p-0 ml-1"></BsArrowUpRightCircle></h1>
+            {/* <h1 className="flex items-center">to proceed  <BsArrowUpRightCircle className=" p-0 ml-1"></BsArrowUpRightCircle></h1> */}
           </div>
         </Link>
       </div>
