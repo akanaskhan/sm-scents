@@ -84,7 +84,7 @@ function WomensPerfumes() {
       ) : (
         <div>
           <div className="flex justify-center my-6 lg:my-10 text-center items-center">
-            <h1 className="text-3xl lg:text-4xl font-black underline">Women's Perfumes</h1>
+            <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold text-black">Women's Perfumes</h1>
           </div>
 
           

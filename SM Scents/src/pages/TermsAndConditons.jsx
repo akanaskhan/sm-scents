@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function TermsAndConditions(){
   return (
     <div className="max-w-3xl mx-auto p-8 text-gray-800">
-      <h1 className="text-3xl font-bold text-center mb-8 underline text-black">Terms and Conditions</h1>
+      <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold text-center mb-8 underline text-black">Terms and Conditions</h1>
       {/* <p className="text-sm text-gray-500 text-center mb-6">Last Updated: [Today's Date]</p> */}
 
       <section className="mb-8">

@@ -4,7 +4,7 @@ export default function RefundExchangePolicy() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen  p-4">
             <div className="max-w-2xl w-full bg-white rounded-lg shadow-md p-6">
-                <h1 className="text-3xl underline font-bold mb-4 text-black text-center">Refund and Exchange Policy</h1>
+                <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold mb-4 text-black text-center">Refund and Exchange Policy</h1>
                 <p className="text-gray-600 mb-6">
                     At SM Scents, customer satisfaction is our priority. Please review our refund and exchange policy below.
                 </p>

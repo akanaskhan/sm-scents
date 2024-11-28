@@ -21,7 +21,7 @@ function Cart() {
   return (
     <div className="container-sm mx-auto mb-5 mt-4">
       <div className="text-center">
-        <h1 className="font-semibold text-2xl  md:text-3xl lg:text-3xl xl:text-3xl  underline">Your Cart</h1>
+        <h1 className="font-bold text-2xl  md:text-3xl lg:text-3xl xl:text-3xl  text-black">Your Cart</h1>
       </div>
 
       <div className="flex  gap-3 lg:gap-5 mb-5 mt-3 ">
@@ -75,13 +75,13 @@ function Cart() {
               <Button
                 onClick={() => addItemToCart(data)}
                 icon={<PlusOutlined />}
-                className="border border-black text-black"
+                className="border border-black text-black w-4 h-8"
               ></Button>
 
               <h1 className="">{data.quantity}</h1>
               <Button
                 danger
-                className="border border-black text-black"
+                className="border border-black text-black w-4 h-8"
                 icon={<MinusOutlined />}
                 onClick={() => lessQuantityFromCart(data?.id)}
                 disabled={data?.quantity === 1}

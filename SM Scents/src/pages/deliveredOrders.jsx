@@ -139,7 +139,7 @@ export default function DeliveredOrders() {
         <div className="flex">
           <SideMenu />
         <div className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-black underline text-center my-4">Delivered Orders</h1>
+          <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold text-black  text-center my-4">Delivered Orders</h1>
           <Table
             dataSource={deliveredOrders}
             columns={columns}

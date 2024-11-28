@@ -18,17 +18,28 @@ function UserOrders() {
   // Function to fetch orders for the current user
   const fetchUserOrders = async () => {
     try {
-      const user = auth?.currentUser?.uid;
-      console.log(user)
+      const user = auth?.currentUser?.uid; // Get the current user UID
       if (user) {
-        const ordersCollection = collection(db, "orders");
-        const q = query(ordersCollection, where("OrderBy", "==", user));
-        const docs = await getDocs(q);
-        const arr = docs.docs.map((order) => ({
-          ...order.data(),
-          id: order.id,
-        }));
-        setOrders(arr);
+        // Fetch orders from "orders" collection
+        const ordersQuery = query(collection(db, "orders"), where("OrderBy", "==", user));
+        const ordersDocs = await getDocs(ordersQuery);
+        const ordersData = ordersDocs.docs.map((doc) => ({ ...doc.data(), id: doc.id, collection: "orders" }));
+  
+        // Fetch orders from "deletedOrders" collection
+        const deletedOrdersQuery = query(collection(db, "deletedOrders"), where("OrderBy", "==", user));
+        const deletedOrdersDocs = await getDocs(deletedOrdersQuery);
+        const deletedOrdersData = deletedOrdersDocs.docs.map((doc) => ({ ...doc.data(), id: doc.id, collection: "deletedOrders" }));
+  
+        // Fetch orders from "deliveredOrders" collection
+        const deliveredOrdersQuery = query(collection(db, "deliveredOrders"), where("OrderBy", "==", user));
+        const deliveredOrdersDocs = await getDocs(deliveredOrdersQuery);
+        const deliveredOrdersData = deliveredOrdersDocs.docs.map((doc) => ({ ...doc.data(), id: doc.id, collection: "deliveredOrders" }));
+  
+        // Combine all orders into a single array
+        const allOrders = [...ordersData, ...deletedOrdersData, ...deliveredOrdersData];
+  
+        // Set the combined orders into state
+        setOrders(allOrders);
       }
       setLoader(false);
     } catch (err) {
@@ -36,12 +47,9 @@ function UserOrders() {
       setLoader(false);
     }
   };
+  
 
-//   const ttt = orders.map((order, index) => (
-   
-//     console.log(order)
-// ))
-//   console.log("ttt", ttt)
+
   const renderOrders = (orders) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
       {orders.map((order, index) => (
@@ -70,7 +78,7 @@ function UserOrders() {
       ) : (
         <div>
           <div className="flex justify-center my-6 lg:my-10 text-center items-center">
-            <h1 className="text-3xl lg:text-4xl font-black underline">Your Orders</h1>
+            <h1 className="text-3xl lg:text-4xl font-black ">Your Orders</h1>
           </div>
           {orders.length ? (
             renderOrders(orders)

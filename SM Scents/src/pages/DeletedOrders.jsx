@@ -87,7 +87,7 @@ export default function DeletedOrders() {
             <SideMenu/>
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-center my-4 text-center items-center">
-            <h1 className="text-4xl font-black underline">Deleted Orders</h1>
+            <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold text-black ">Deleted Orders</h1>
           </div>
           <Table
             dataSource={deletedOrders}

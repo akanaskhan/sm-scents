@@ -62,7 +62,7 @@ function ContactUs() {
 
   return (
     <div className="contact-us-container p-8 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold text-center mb-8 text-black">Contact Us</h1>
+      <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold text-center mb-8 text-black">Contact Us</h1>
       
       <div className="mb-8 text-center">
         <p className="text-lg"><strong>Phone:</strong> {contactData.phone}</p>

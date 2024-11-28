@@ -125,6 +125,7 @@ export default function Footer() {
                   <div className="nav-line">Term's and Conditions</div>
                    </Link>
               </li>
+             
             </ul>
             <hr className="text-white my-3 d-lg-none border-3" />
           </div>

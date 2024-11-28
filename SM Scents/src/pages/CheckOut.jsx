@@ -64,7 +64,7 @@ function Checkout() {
     <>
       <div className="container">
         <div className="text-center m-4">
-          <p className="text-4xl font-black underline">Check Out</p>
+          <p className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold text-black">Check Out</p>
         </div>
         <div className="flex lg:flex-row md:flex-row xl:flex-row flex-col-reverse mb-32">
           <div className=" w-full lg:w-2/4 ">

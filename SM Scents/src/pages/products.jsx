@@ -55,7 +55,7 @@ function AllProducts() {
         <div className="container mx-auto">
           <div>
             <div className="flex justify-center my-4 text-center items-center">
-              <h1 className="text-4xl font-black text-black underline">All Perfumes</h1>
+              <h1 className="text-2xl  md:text-3xl  lg:text-3xl xl:text-4xl xxl:text-4xl font-bold text-black ">All Perfumes</h1>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-8 " >
               {products?.map((data) => (

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState, useContext } from "react";
-import { db } from "../utils/firebase"; // import Firestore
+import { db } from "../utils/firebase"; 
 import { doc, setDoc } from "firebase/firestore";
-import { AuthContext } from "./AuthContext"; // assuming you have AuthContext to get user information
+import { AuthContext } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export const CartContext = createContext();
@@ -14,7 +14,13 @@ export default function CartContextProvider({ children }) {
   useEffect(() => {
     const itemsFromStorage = localStorage.getItem("cartItems");
     if (itemsFromStorage) {
-      setCartItems(JSON.parse(itemsFromStorage));
+      try {
+        const parsedItems = JSON.parse(itemsFromStorage);
+        setCartItems(Array.isArray(parsedItems) ? parsedItems : []);
+      } catch (error) {
+        console.error("Failed to parse cart items from localStorage:", error);
+        setCartItems([]);
+      }
     }
   }, []);
 
@@ -25,32 +31,35 @@ export default function CartContextProvider({ children }) {
     }
   }, [cartItems, user]);
 
-
+  const syncCartWithFirestore = async (cart) => {
+    if (!user || !user.uid) return;
+    try {
+      setLoader(true);
+      const cartRef = doc(db, "carts", user.uid);
+      await setDoc(cartRef, { cart });
+      setLoader(false);
+    } catch (error) {
+      console.error("Error syncing cart with Firestore:", error);
+      setLoader(false);
+    }
+  };
 
   function addItemToCart(product) {
-    const arr = cartItems;
-    const itemIndex = cartItems.findIndex((data) => data.id == product.id);
-    if (itemIndex == -1) {
-      // item array mein nahn he
+    const arr = [...cartItems];
+    const itemIndex = arr.findIndex((data) => data.id === product.id);
+    if (itemIndex === -1) {
       arr.push({ ...product, quantity: 1 });
     } else {
       arr[itemIndex].quantity++;
     }
-    setCartItems([...arr]);
+    setCartItems(arr);
   }
 
-
-  // Buy Now function: adds product to cart and navigates to checkout page
   const buyNow = (item) => {
-    const arr = [...cartItems];
-    const itemIndex = arr.findIndex((data) => data.id === item.id);
-    if (itemIndex === -1) {
-      arr.push({ ...item, quantity: 1 });
-    } else {
-      arr[itemIndex].quantity++;
-    }
-    setCartItems(arr);
+    addItemToCart(item);
+    // Navigate to checkout if needed
   };
+
   function removeItemFromCart(id) {
     const arr = cartItems.filter((data) => data.id !== id);
     setCartItems(arr);
@@ -63,20 +72,13 @@ export default function CartContextProvider({ children }) {
       arr[itemIndex].quantity--;
       setCartItems(arr);
     } else if (itemIndex !== -1) {
-      removeItemFromCart(id); // remove item if quantity is 0
+      removeItemFromCart(id);
     }
   }
 
   function isItemAdded(id) {
-    const arr = cartItems;
-    const itemIndex = cartItems.findIndex((data) => data.id == id);
-    if (itemIndex == -1) {
-      return null;
-    } else {
-      return arr[itemIndex];
-    }
+    return cartItems.find((data) => data.id === id) || null;
   }
-
 
   return (
     <CartContext.Provider
@@ -87,6 +89,7 @@ export default function CartContextProvider({ children }) {
         removeItemFromCart,
         lessQuantityFromCart,
         isItemAdded,
+        loader,
       }}
     >
       {children}

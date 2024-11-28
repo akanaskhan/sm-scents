@@ -58,16 +58,16 @@ function NavBar() {
     
       const text = <span>Title</span>;
     const content = (
-      <div className="flex flex-col">
+      <div className="flex flex-col text-left">
        {auth.currentUser ? (
         <>
-             <Link to="/user-orders" className="bg-white p-2 px-3 text-lg dropdown-Btn border border-gray-900">
+             <Link to="/user-orders" className="bg-white p-1  lg:text-lg  text-left text-gray-700 font-semibold   hover:text-black">
                 <button >
                   Your Orders
                 </button>
               </Link>
               <button
-                className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2 border border-gray-900"
+                className="bg-white p-1  lg:text-lg  text-left text-gray-700 font-semibold   hover:text-black"
                 onClick={HandleSignOut}
                 >
                 Log Out
@@ -75,7 +75,7 @@ function NavBar() {
                 </>
             ) : (
               <Link to="/login">
-                <button className="bg-white p-2 px-3 text-lg dropdown-Btn border border-gray-900">
+                <button className="bg-white p-1  lg:text-lg text-left text-gray-700 font-semibold   hover:text-black">
                   Login
                 </button>
               </Link>
