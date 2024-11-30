@@ -131,7 +131,9 @@ const handleToggle = () => {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
   }
 };
-
+document.addEventListener("click", () => {
+  setShowDropdown(false);
+});
   return (
     <div className="m-0">
         <div className="marquees">
@@ -207,42 +209,13 @@ const handleToggle = () => {
 
             <ConfigProvider>
     <Popover placement="bottomRight" content={content}>
-          <Button className="bg-transparent border-none m-0 px-2 text-lg"><i
+          <Button className="bg-transparent border-none m-0 pl-0.5 pr-0  text-lg"><i
       
         className="fa-solid fa-user text-white text-md  cursor-pointer  z-50"
       /></Button>
         </Popover>
      </ConfigProvider>
-            {/* <div className="dropdown">
-              <i
-                className={`fa-solid fa-user text-white fa-lg  cursor-pointer`}
-              />
-              <div className="dropdown-content ">
-               
-
-
-                  {auth.currentUser ? (
-          <button
-            className="bg-white p-2 px-3 text-lg dropdown-Btn mt-2"
-            onClick={HandleSignOut}
-          >
-            LogOut
-          </button>
-        ) : (
-          <Link to="/login">
-            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
-              Login
-            </button>
-          </Link>
-        )}
-         <Link to="/user-orders">
-            <button className="bg-white p-2 px-3 text-lg dropdown-Btn">
-              Your Orders
-            </button>
-          </Link>
-              
-              </div>
-            </div> */}
+           
           </div>
 
           <Navbar.Collapse id="basic-navbar-nav">
@@ -387,7 +360,7 @@ const handleToggle = () => {
     </Badge>
     <ConfigProvider>
     <Popover placement="bottomRight" content={content}>
-          <Button className="bg-transparent border-none m-0 px-2 text-lg"><i
+          <Button className="bg-transparent border-none m-0 pl-0.5 pr-0 text-lg"><i
       
         className="fa-solid fa-user text-white text-md  cursor-pointer  z-50"
       /></Button>

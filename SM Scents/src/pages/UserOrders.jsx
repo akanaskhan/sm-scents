@@ -51,18 +51,17 @@ function UserOrders() {
 
 
   const renderOrders = (orders) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8 sm:text-sm text-sm  md:text-md lg:text-lg xl:text-lg ">
       {orders.map((order, index) => (
         <div className="border rounded-md p-4 shadow" key={order.id}>
           <Link to={`/orders/${order.id}`}>
-            <h1 className="text-xl font-semibold">Order ID: {order.id}</h1>
+            <h1 className="text-lg font-semibold">Order ID: {order.id}</h1>
           </Link>
           <p><strong>Status:</strong> {order.status}</p>
           <p><strong>Date:</strong> {dayjs(order.createdAt).fromNow()}</p>
           <p><strong>Address:</strong> {order.Address}</p>
           <p><strong>Phone:</strong>  {order["Phone Number"]}</p>
           <p><strong>Total Price:</strong> Rs. {order.TotalAmount || "N/A"}</p>
-          {/* <p><strong>aa</strong>: {console.log(index)}</p> */}
           
         </div>
       ))}
@@ -78,12 +77,12 @@ function UserOrders() {
       ) : (
         <div>
           <div className="flex justify-center my-6 lg:my-10 text-center items-center">
-            <h1 className="text-3xl lg:text-4xl font-black ">Your Orders</h1>
+            <h1 className="font-bold text-2xl  md:text-3xl lg:text-3xl xl:text-3xl  text-black">Your Orders</h1>
           </div>
           {orders.length ? (
             renderOrders(orders)
           ) : (
-            <div className="text-xl text-center my-96">
+            <div className="text-xl text-center my-52">
               <p>No orders found.</p>
             </div>
           )}

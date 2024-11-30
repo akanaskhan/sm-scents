@@ -52,6 +52,7 @@ function Checkout() {
     };
     addDoc(OderRef, obj).then(() => {
       localStorage.setItem('cartItems', '0'); 
+      window.location.reload();
       reset();
       message.success("Order Booked Successfully");
       navigate("/");
@@ -68,7 +69,7 @@ function Checkout() {
         </div>
         <div className="flex lg:flex-row md:flex-row xl:flex-row flex-col-reverse mb-32">
           <div className=" w-full lg:w-2/4 ">
-            <form className="flex flex-col " onSubmit={handleSubmit(onSubmit)}>
+            <form className="flex flex-col   " onSubmit={handleSubmit(onSubmit)}>
               <div className="mt-3">
 
               <div>
@@ -114,7 +115,7 @@ function Checkout() {
                 <CustomInput
                   placeholder={"Last Name"}
                   className={
-                    "border mt-2 w-full  h-10 border-purple-600 ml-4    px-3 py-4 rounded-md"
+                    "border mt-2 w-full  h-10 border-purple-600 ml-4    px-3 py-4  rounded-md"
                   }
                   obj={{ ...register("Last Name", { required: true }) }}
                   errorMsg={"Last Name is required"}
@@ -228,34 +229,34 @@ function Checkout() {
             </form>
           </div>
 
-          <div className="w-full  lg:w-1/3 flex flex-col  rounded">
-            <div>
+          <div className="w-full  lg:w-1/3 flex flex-col  rounded ">
+            <div className="">
               {cartItems.map((product, index) => (
                 <div
                   key={product.id || `cart-item-${index}`}
                   className="flex justify-stretch 
-                  border my-2 p-3 rounded"
+                  border my-2 p-2.5  sm:p-2 md:p-2 lg:p-3 xl:p-3 rounded "
                 >
-                  <div className="w-1/6">
+                  <div className="w-12">
                     <Badge count={product.quantity}>
                       <img className="rounded object-cover" src={product.img} />
                     </Badge>
                   </div>
                   <div className="flex   justify-evenly ">
                     <div className="flex flex-col pl-5">
-                      <div className="flex  mb-2">
+                      <div className="flex  mb-2 line-clamp-1">
                         <p className="font-bold">{product.title}</p>
                         <p className="text-sm tracking-widest ml-1">
                           {" "}
-                          {`(${product.category})`}
+                          {`(${product.category.substr(0,5)}...)`}
                         </p>
                       </div>
 
                       <p className="font-normal  mb-2">{product.ML}</p>
                     </div>
                   </div>
-                  <div className="ml-12 ">
-                    <p className="font-normal  mb-2">Rs: {product.SalePrice}/-</p>
+                  <div className="ml-12 flex  ms-auto ">
+                    <p className="font-normal  mb-2 ">Rs: {product.SalePrice}/-</p>
                   </div>
                   <div></div>
                 </div>
